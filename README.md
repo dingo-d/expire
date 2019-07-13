@@ -1,0 +1,2 @@
+# expire
+Expire WordPress theme
