@@ -7,10 +7,12 @@
  * handled by a callback to expire_comment().
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
@@ -38,6 +40,8 @@ function expire_comment_nav() {
  * @param string $comment Comment string.
  * @param array  $args    Comment arguments.
  * @param int    $depth   Comment depth - whether it's a reply or comment.
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 function expire_comment( $comment, $args, $depth ) {
@@ -71,9 +75,9 @@ function expire_comment( $comment, $args, $depth ) {
 					sprintf( '<p class="comment-author">%s</p>', get_comment_author_link() ),
 					sprintf( 'on <a class="comment_time" href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
+						get_comment_time( 'c' ), // phpcs:ignore
 						// translators: Adds date and time.
-						sprintf( esc_html__( '%1$s at %2$s', 'expire' ), get_comment_date(), get_comment_time() )
+						sprintf( esc_html__( '%1$s at %2$s', 'expire' ), get_comment_date(), get_comment_time() ) // phpcs:ignore
 					)
 				);
 				?>

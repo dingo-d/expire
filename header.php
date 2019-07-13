@@ -3,10 +3,12 @@
  * Header
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
@@ -27,14 +29,15 @@ wp_head();
 
 <?php
 echo ( get_theme_mod( 'boxed_body', false ) ) ? '<div class="boxed_body_wrapper">' : '';
-$name = get_bloginfo( 'name' );
-$description = get_bloginfo( 'description' );
+$name               = get_bloginfo( 'name' );
+$description        = get_bloginfo( 'description' );
 $header_retina_logo = get_theme_mod( 'header_retina_logo' );
-$header_class = has_header_image() ? 'class="has_header_image"' : '';
-$custom_logo_id = get_theme_mod( 'custom_logo' );
-$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+$header_class       = has_header_image() ? 'class="has_header_image"' : '';
+$custom_logo_id     = get_theme_mod( 'custom_logo' );
+$logo               = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
 	<header id="expire_main_header" <?php echo wp_kses_post( $header_class ); ?>>
+		<a class="skip-link" href="#main-content" tabindex="0"><?php esc_html_e( 'Skip to the main content', 'expire' ); ?></a>
 		<div class="container">
 			<div id="logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -74,10 +77,10 @@ $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 						<h2><?php echo esc_html( get_the_time( 'Y' ) ); ?></h2>
 					<?php elseif ( is_category() ) : ?>
 						<?php
-							$category = get_category( get_query_var( 'cat' ) );
-							$cat_id = $category->cat_ID;
+							$category    = get_category( get_query_var( 'cat' ) );
+							$category_id = $category->cat_ID;
 						?>
-						<h2><?php echo esc_html( get_cat_name( $cat_id ) ); ?></h2>
+						<h2><?php echo esc_html( get_cat_name( $category_id ) ); ?></h2>
 					<?php elseif ( ( is_home() || is_front_page() ) && display_header_text() ) : ?>
 						<h2 id="main_tagline"><?php echo esc_html( $description ); ?></h2>
 					<?php else : ?>

@@ -3,21 +3,22 @@
  * Default page template
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
 $values = get_post_custom( $post->ID );
 
 get_header(); ?>
-	<section class="page_main_section">
+	<section id="main-content" class="page_main_section">
 		<div class="container">
 			<div class="row">
 				<div class="page_container clearfix">
-
 			<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) :

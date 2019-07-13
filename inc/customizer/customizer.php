@@ -3,17 +3,19 @@
  * Customizer
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
 /**
  * Including custom controls
  */
-require_once( EXPIRE_TEMPDIR . '/inc/customizer/custom-controls.php' );
+require EXPIRE_TEMPDIR . '/inc/customizer/custom-controls.php'; // phpcs:ignore
 
 add_action( 'customize_register', 'expire_customize_register', 11 );
 /**

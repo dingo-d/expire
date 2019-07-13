@@ -2,7 +2,10 @@
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.2.2
 Version: 1.1.0
-License: GPLv2 or later
+Requires PHP: 5.6
+Stable tag: 1.1.0
+Contributors: dingo_d
+License: MIT
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 Tags: one-column, right-sidebar, custom-header, custom-background, custom-colors, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
@@ -23,6 +26,7 @@ Update theme and tested with latest WordPress version (5.2.2)
 Add styles for all Gutenberg blocks
 Updated the theme to meet the current Theme Review standards
 Changed bundled images to be GPL compatible
+Change License to MIT
 
 = 1.0.9 =
 Updated the compatibility - checked with WordPress 4.8
@@ -72,9 +76,8 @@ Initial release
 
 === Images ===
 
-Image taken from unsplash.com
-
-https://unsplash.com/photos/ICW6QYOcdlg
+Bundled image for default header image: http://mystock.themeisle.com/photo/sea-breeze/
+Licensed under Creative Commons Zero (CC0)
 
 Screenshot image contains image from the unit data test (Sydney Harbor Bridge) which has the following description:
 Public domain via http://www.burningwell.org/gallery2/v/Objects/dsc09114.jpg.html

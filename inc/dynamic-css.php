@@ -3,37 +3,61 @@
  * Dynamic css based on options in the Theme Customize API and Theme Options
  *
  * @package Expire
- * @version 1.0.9
- * @author expirewp <https://madebydenis.com/expire>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @version 1.1.0
+ * @author Denis Žoljom <https://madebydenis.com/expire>
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since 1.1.0 Update comment styles
  * @since 1.0.0
  */
 
-/********* Grid Width ***********/
+/**
+ * Grid width customizer setting
+ *
+ * @var string
+ */
 $grid_width = get_theme_mod( 'grid_width', '1170' );
+
 if ( isset( $grid_width ) && '' !== $grid_width ) {
 	$custom_css .= '
 	.container{width:' . intval( esc_attr( $grid_width ) ) . 'px;}
+	.wp-block-cover{margin-left:calc((100vw - ' . intval( esc_attr( $grid_width ) ) . 'px)/-2);}
 	';
 }
 
-/********* Custom Header ***********/
+/**
+ * Custom Header
+ *
+ * @var string
+ */
 if ( has_header_image() ) {
 	$custom_css .= '#expire_title_bar{background:url(' . get_header_image() . '); min-height:' . esc_attr( get_custom_header()->height ) . '; background-size:cover; background-position:center center;}';
 }
 
-/********* Custom Header Color ***********/
+/**
+ * Custom header color customizer setting
+ *
+ * @var string
+ */
 $custom_css .= '#expire_title_bar h2{ color: #' . get_header_textcolor() . '}';
 
-/********* Background Color ***********/
+/**
+ * Background color customizer setting
+ *
+ * @var string
+ */
 $background_color = get_theme_mod( 'background_color' );
 
 $custom_css .= '.blog .post_content_inner_wrapper .post_info{ background: ' . esc_attr( $background_color ) . '}
 	#expire_breadcrumbs_section{ border-color: ' . esc_attr( $background_color ) . ';} #expire_breadcrumbs_section:before{ background:' . esc_attr( $background_color ) . ';}
 	#expire_breadcrumbs_section:after{ border-bottom-color: ' . esc_attr( $background_color ) . ';}';
 
-/********* Main Color ***********/
+/**
+ * Main color customizer setting
+ *
+ * @var string
+ */
 $main_color = get_theme_mod( 'main_color' );
 
 $custom_css .= '::selection{ background:' . esc_attr( $main_color ) . ';}
@@ -50,7 +74,11 @@ $custom_css .= '::selection{ background:' . esc_attr( $main_color ) . ';}
 	nav > ul > li > a:hover:after, nav > ul > li.current_page_item > a:after, nav > ul > li.current_page_parent > a:after{ background:' . esc_attr( $main_color ) . ';}
 	nav > ul ul li:hover > a{ color:' . esc_attr( $main_color ) . ';}';
 
-/********* Secondary Color ***********/
+/**
+ * Secondary color customizer setting
+ *
+ * @var string
+ */
 $secondary_color = get_theme_mod( 'secondary_color' );
 
 $custom_css .= 'select{background-image: linear-gradient(45deg, transparent 50%, ' . esc_attr( $secondary_color ) . ' 50%), linear-gradient(135deg, ' . esc_attr( $secondary_color ) . ' 50%, transparent 50%), linear-gradient(to right, ' . esc_attr( $secondary_color ) . ', ' . esc_attr( $secondary_color ) . ');}
@@ -72,8 +100,13 @@ $custom_css .= 'select{background-image: linear-gradient(45deg, transparent 50%,
 	.blog .sticky .post_content_inner_wrapper,
 	.post_featured_image:before{ background:' . esc_attr( $secondary_color ) . ';}';
 
-/********* Body Background & Text Color ***********/
+/**
+ * Body background & text color customizer setting
+ *
+ * @var string
+ */
 $body_text_color = get_theme_mod( 'body_text_color' );
+
 if ( '' !== $body_text_color ) {
 	$custom_css .= 'body{color:' . esc_attr( $body_text_color ) . ';}
 	h1, h2, h3, h4, h5, h6{color:' . esc_attr( $body_text_color ) . ';}
@@ -83,8 +116,13 @@ if ( '' !== $body_text_color ) {
 	.single_post_content .post_meta i{ color:' . esc_attr( $main_color ) . ';}';
 }
 
-/********* Links Hover Color ***********/
+/**
+ * Links hover color customizer setting
+ *
+ * @var string
+ */
 $links_hover = get_theme_mod( 'links_hover' );
+
 if ( '' !== $links_hover ) {
 	$custom_css .= 'a:not(.has_header_image nav > ul > li > a):hover,
 		input[type="submit"]:hover,
@@ -111,8 +149,12 @@ if ( '' !== $links_hover ) {
     	.blog .post_content_inner_wrapper .more-link:hover{border-color:' . esc_attr( $links_hover ) . ';}';
 }
 
-/********* Header Logo ***********/
-$header_retina_logo        = get_theme_mod( 'header_retina_logo' );
+/**
+ * Header logo customizer setting
+ *
+ * @var string
+ */
+$header_retina_logo = get_theme_mod( 'header_retina_logo' );
 
 if ( '' !== $header_retina_logo ) {
 	$header_logo               = get_theme_mod( 'custom_logo' );
@@ -131,8 +173,12 @@ if ( '' !== $header_retina_logo ) {
 		}';
 }
 
-/********* Footer Logo ***********/
-$footer_retina_logo        = get_theme_mod( 'footer_retina_logo', '' );
+/**
+ * Footer logo customizer setting
+ *
+ * @var string
+ */
+$footer_retina_logo = get_theme_mod( 'footer_retina_logo', '' );
 
 if ( '' !== $footer_retina_logo ) {
 	$footer_logo               = get_theme_mod( 'footer_logo', '' );

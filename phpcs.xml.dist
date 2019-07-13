@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Expire Coding Standards" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+
+	<description>The Coding standard for the Expire WordPress theme.</description>
+
+	<file>.</file>
+
+	<arg value="sp"/>
+	<arg name="extensions" value="php"/>
+	<arg name="basepath" value="./"/>
+
+	<!-- Exclude Composer vendor directory. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+
+	<rule ref="WPThemeReview" />
+
+	<rule ref="WordPress-Docs"/>
+
+	<!-- Check code for cross-version PHP compatibility. -->
+	<config name="testVersion" value="5.6-"/>
+	<rule ref="PHPCompatibility"/>
+
+</ruleset>

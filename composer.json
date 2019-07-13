@@ -1,0 +1,53 @@
+{
+	"name"       : "dingo-d/expire",
+	"description": "Expire is a simple WordPress theme that can easily be extended.",
+	"type"       : "wordpress-theme",
+	"keywords"   : [
+		"WordPress",
+		"Themes"
+	],
+	"homepage"   : "https://wordpress.org/themes/expire/",
+	"license"    : "MIT",
+	"authors"    : [
+		{
+			"name"    : "Denis Žoljom",
+			"homepage": "https://github.com/dingo-d",
+			"role"    : "Owner and developer"
+		},
+		{
+			"name"    : "Contributors",
+			"homepage": "https://github.com/WPTRT/WPThemeReview/graphs/contributors"
+		}
+	],
+	"require"    : {
+		"php": ">=5.6"
+	},
+	"repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:WPTRT/WPThemeReview.git"
+    }
+  ],
+	"require-dev": {
+		"wptrt/wpthemereview" : "dev-develop",
+		"phpcompatibility/phpcompatibility-wp": "^2.0",
+		"phpcompatibility/php-compatibility": "^9.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+		"roave/security-advisories": "dev-master"
+	},
+	"scripts"    : {
+		"phpcs-i": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i"
+		],
+		"check-cs": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
+		],
+		"fix-cs": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+		]
+	},
+	"support"    : {
+		"issues": "https://github.com/dingo-d/expire/issues",
+		"source": "https://github.com/dingo-d/expire"
+	}
+}

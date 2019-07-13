@@ -4,8 +4,10 @@
  * @package Expire
  * @version 1.0.1
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 

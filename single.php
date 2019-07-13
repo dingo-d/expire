@@ -3,49 +3,69 @@
  * Single post
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
 get_header();
 
 $expire_settings = get_option( 'expire_settings', '' );
-$clock_icon = ( isset( $expire_settings['settings']['clock_icon'] ) && '' !== $expire_settings['settings']['clock_icon']) ? '<i class="' . $expire_settings['settings']['clock_icon'] . '"></i>' : '';
-$tags_icon = ( isset( $expire_settings['settings']['tags_icon'] ) && '' !== $expire_settings['settings']['tags_icon']) ? '<i class="' . $expire_settings['settings']['tags_icon'] . '"></i>' : '';
-$author_icon = ( isset( $expire_settings['settings']['author_icon'] ) && '' !== $expire_settings['settings']['author_icon']) ? '<i class="' . $expire_settings['settings']['author_icon'] . '"></i>' : '';
+
+$clock_icon = ( isset( $expire_settings['settings']['clock_icon'] )
+				&& '' !== $expire_settings['settings']['clock_icon'])
+				? '<i class="' . $expire_settings['settings']['clock_icon'] . '"></i>' : '';
+$tags_icon  = ( isset( $expire_settings['settings']['tags_icon'] )
+				&& '' !== $expire_settings['settings']['tags_icon'])
+				? '<i class="' . $expire_settings['settings']['tags_icon'] . '"></i>' : '';
+$author_icon= ( isset( $expire_settings['settings']['author_icon'] )
+				&& '' !== $expire_settings['settings']['author_icon'])
+				? '<i class="' . $expire_settings['settings']['author_icon'] . '"></i>' : '';
 ?>
-<section id="expire_single_post">
+<section id="main-content">
 	<div class="container">
 		<div class="row">
 			<?php if ( have_posts() ) :
 				while ( have_posts() ) :
 					the_post();
 					$thumbnail_class = ( has_post_thumbnail() ) ? 'has_post_thumbnail' : '';
-					$post_format = get_post_format();
-					$icon_out = '';
-					if ( false === $post_format ) {
-						$post_format = 'standard';
-						$icon_out .= '<i class="ti-pencil"></i>';
-					} elseif ( 'image' === $post_format ) {
-						$icon_out .= '<i class="ti-image"></i>';
-					} elseif ( 'video' === $post_format ) {
-						$icon_out .= '<i class="ti-video-clapper"></i>';
-					} elseif ( 'audio' === $post_format ) {
-						$icon_out .= '<i class="ti-music-alt"></i>';
-					} elseif ( 'quote' === $post_format ) {
-						$icon_out .= '<i class="ti-quote"></i>';
-					} elseif ( 'gallery' === $post_format ) {
-						$icon_out .= '<i class="ti-gallery"></i>';
-					} elseif ( 'chat' === $post_format ) {
-						$icon_out .= '<i class="ti-comment-alt"></i>';
-					} elseif ( 'link' === $post_format ) {
-						$icon_out .= '<i class="ti-link"></i>';
-					} else {
-						$icon_out .= '<i class="ti-pencil-alt"></i>';
-					} ?>
+					$post_format     = get_post_format();
+
+					switch ( $post_format ) {
+						case 'image':
+							$icon_out = '<i class="ti-image"></i>';
+							break;
+						case 'video':
+							$icon_out = '<i class="ti-video-clapper"></i>';
+							break;
+						case 'audio':
+							$icon_out = '<i class="ti-music-alt"></i>';
+							break;
+						case 'quote':
+							$icon_out = '<i class="ti-quote"></i>';
+							break;
+						case 'gallery':
+							$icon_out = '<i class="ti-gallery"></i>';
+							break;
+						case 'chat':
+							$icon_out = '<i class="ti-comment-alt"></i>';
+							break;
+						case 'link':
+							$icon_out = '<i class="ti-link"></i>';
+							break;
+						case 'standard':
+							$icon_out = '<i class="ti-pencil"></i>';
+							break;
+
+						default:
+							$icon_out = '<i class="ti-pencil-alt"></i>';
+							break;
+					}
+					?>
 			<!-- Main Content -->
 			<div class="span9">
 				<div <?php post_class( 'single_post_content' ); ?>>
@@ -98,9 +118,11 @@ $author_icon = ( isset( $expire_settings['settings']['author_icon'] ) && '' !== 
 							?>
 						</div>
 					</div>
+					<?php if ( has_tag() ) : ?>
 					<div class="post_tags">
 						<i class="ti-tag"></i><span class="post_tag"><?php the_tags( '', ', ', '' ); ?></span>
 					</div>
+					<?php endif; ?>
 					<!-- Post Pagination  -->
 					<div id="expire_single_post_pagination">
 						<span class="prev"><?php previous_post_link( '%link', esc_html__( 'Next post', 'expire' ) ); ?></span>
@@ -133,7 +155,7 @@ $content_after_single_post = get_theme_mod( 'content_after_single_post', false )
 
 if ( $content_after_single_post && is_single() ) {
 	$page_id = get_page( $content_after_single_post );
-	echo apply_filters( 'the_content', wp_kses( $page_id->post_content, expire_allowed_tags() ) ); // WPCS: xss ok.
+	echo apply_filters( 'the_content', wp_kses( $page_id->post_content, expire_allowed_tags() ) ); // phpcs:ignore
 }
 
 get_footer();

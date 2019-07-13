@@ -3,25 +3,25 @@
  * Footer
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
-$footer_facebook           = get_theme_mod( 'footer_facebook', '' );
-$footer_twitter            = get_theme_mod( 'footer_twitter', '' );
-$footer_linkedin           = get_theme_mod( 'footer_linkedin', '' );
-$footer_gplus              = get_theme_mod( 'footer_gplus', '' );
-$footer_instagram          = get_theme_mod( 'footer_instagram', '' );
-$footer_target             = get_theme_mod( 'footer_target', '' );
-$show_social               = get_theme_mod( 'show_social', '' );
-$footer_logo               = get_theme_mod( 'footer_logo', '' );
-$footer_retina_logo        = get_theme_mod( 'footer_retina_logo', '' );
-$footer_copyright 		   = get_theme_mod( 'footer_copyright', '' );
-
-
+$footer_facebook    = get_theme_mod( 'footer_facebook', '' );
+$footer_twitter     = get_theme_mod( 'footer_twitter', '' );
+$footer_linkedin    = get_theme_mod( 'footer_linkedin', '' );
+$footer_gplus       = get_theme_mod( 'footer_gplus', '' );
+$footer_instagram   = get_theme_mod( 'footer_instagram', '' );
+$footer_target      = get_theme_mod( 'footer_target', '' );
+$show_social        = get_theme_mod( 'show_social', '' );
+$footer_logo        = get_theme_mod( 'footer_logo', '' );
+$footer_retina_logo = get_theme_mod( 'footer_retina_logo', '' );
+$footer_copyright   = get_theme_mod( 'footer_copyright', '' );
 
 $span1 = '';
 $span2 = '';
