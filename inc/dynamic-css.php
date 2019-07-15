@@ -22,7 +22,7 @@ $grid_width = get_theme_mod( 'grid_width', '1170' );
 if ( isset( $grid_width ) && '' !== $grid_width ) {
 	$custom_css .= '
 	.container{width:' . intval( esc_attr( $grid_width ) ) . 'px;}
-	.wp-block-cover{margin-left:calc((100vw - ' . intval( esc_attr( $grid_width ) ) . 'px)/-2);}
+	.wp-block-cover,.wp-block-image.alignfull{margin-left:calc((100vw - ' . intval( esc_attr( $grid_width ) ) . 'px)/-2);}
 	';
 }
 

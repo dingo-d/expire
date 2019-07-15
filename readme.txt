@@ -10,7 +10,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 Tags: one-column, right-sidebar, custom-header, custom-background, custom-colors, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 == Description ==
+
 Expire is a simple WordPress theme that can easily be extended. It is customizable with lots of options using Theme Customizer. Built according to WordPress coding standards.
+
+== Development ==
+
+Development of the theme is done on GitHub. You can find the link with the source files here:
+
+https://github.com/dingo-d/expire
 
 == Installation ==
 

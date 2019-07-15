@@ -124,6 +124,20 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 	) ) );
 
 	/**
+	Show title bar
+	*/
+	$wp_customize->add_setting( 'show_title_bar', array(
+		'default'           => false,
+		'sanitize_callback' => 'expire_checkbox_sanitization',
+	) );
+	$wp_customize->add_control( new Expire_Toggle_Checkbox_Custom_Control( $wp_customize, 'show_title_bar', array(
+		'label'    	  => esc_html__( 'Show Title Bar', 'expire' ),
+		'description' => esc_html__( 'Check this to hide the title bar on all pages', 'expire' ),
+		'type'     	  => 'checkbox',
+		'section'  	  => 'section_general',
+	) ) );
+
+	/**
 	Separator
 	*/
 	expire_customizer_separator_control( $wp_customize, 'section_general' );

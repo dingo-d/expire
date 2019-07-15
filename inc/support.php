@@ -72,6 +72,11 @@ if ( ! function_exists( 'expire_theme_setup' ) ) {
     add_action( 'wp_enqueue_scripts', 'expire_frontend_scripts' );
 
     /**
+     * Gutenberg admin style
+     */
+	add_action( 'enqueue_block_editor_assets', 'expire_gutenberg_admin_styles' );
+
+    /**
      * Register sidebars
      */
     require EXPIRE_TEMPDIR . '/inc/sidebars.php'; // phpcs:ignore

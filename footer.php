@@ -64,7 +64,7 @@ if ( $show_social ) {
 }
 
 ?>
-<footer id="expire_main_footer">
+<footer id="expire_main_footer" class="main-footer">
 	<div class="container">
 		<div class="row">
 		<?php if ( $show_social ) : ?>

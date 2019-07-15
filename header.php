@@ -60,7 +60,7 @@ $logo               = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 			<div id="expire_menu_toggle"><div class="expire_hamburger_menu"><span></span></div></div>
 		</div>
 	</header>
-	<?php if ( get_theme_mod( 'show_breadcrumbs', true ) ) : ?>
+	<?php if ( get_theme_mod( 'show_title_bar', true ) ) : ?>
 	<section id="expire_title_bar">
 		<div class="container">
 			<div class="row">
