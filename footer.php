@@ -20,7 +20,6 @@ $footer_instagram   = get_theme_mod( 'footer_instagram', '' );
 $footer_target      = get_theme_mod( 'footer_target', '' );
 $show_social        = get_theme_mod( 'show_social', '' );
 $footer_logo        = get_theme_mod( 'footer_logo', '' );
-$footer_retina_logo = get_theme_mod( 'footer_retina_logo', '' );
 $footer_copyright   = get_theme_mod( 'footer_copyright', '' );
 
 $span1 = '';
@@ -94,9 +93,7 @@ if ( $show_social ) {
 					<?php
 					if ( '' !== $footer_logo ) : ?>
 						<img id="footer_main_logo" src="<?php echo esc_url( wp_get_attachment_url( $footer_logo ) ); ?>" alt="<?php echo esc_attr( $name ); ?>">
-						<?php if ( isset( $footer_retina_logo ) && 0 !== $footer_retina_logo ) : ?>
-						<img id="footer_retina_logo" src="<?php echo esc_url( wp_get_attachment_url( $footer_retina_logo ) ); ?>" alt="<?php echo esc_attr( $name ); ?>">
-						<?php endif;
+					<?php
 					else : ?>
 						<h1 id="footer_logo_textual"><?php echo esc_html( $name ); ?></h1>
 						<?php if ( '' !== $description ) : ?>

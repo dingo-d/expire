@@ -91,6 +91,8 @@ cite {
     margin-left: 20px; }
   .block-editor-block-list__block[data-type="core/image"][data-align=center] .wp-block-image {
     display: block; }
+  .block-editor-block-list__block[data-type="core/image"][data-align=center] .editor-rich-text {
+    display: block; }
 
 .block-editor-block-list__layout .block-editor-block-list__block[data-align=left] .block-editor-block-list__block-edit {
   margin-right: 0; }
@@ -104,3 +106,9 @@ cite {
 .wp-block-quote.is-large, .wp-block-quote.is-large {
   padding-left: 30px;
   padding-bottom: 10px; }
+
+.wp-block-button__link {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 33px 13px 34px; }

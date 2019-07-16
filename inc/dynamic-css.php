@@ -8,7 +8,7 @@
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
  *
- * @since 1.1.0 Update comment styles
+ * @since 1.1.0 Update comment styles, updated styles
  * @since 1.0.0
  */
 
@@ -50,8 +50,8 @@ $custom_css .= '#expire_title_bar h2{ color: #' . get_header_textcolor() . '}';
 $background_color = get_theme_mod( 'background_color' );
 
 $custom_css .= '.blog .post_content_inner_wrapper .post_info{ background: ' . esc_attr( $background_color ) . '}
-	#expire_breadcrumbs_section{ border-color: ' . esc_attr( $background_color ) . ';} #expire_breadcrumbs_section:before{ background:' . esc_attr( $background_color ) . ';}
-	#expire_breadcrumbs_section:after{ border-bottom-color: ' . esc_attr( $background_color ) . ';}';
+	#expire_breadcrumbs_section{ border-color: #' . esc_attr( $background_color ) . ';} #expire_breadcrumbs_section:before{ background: #' . esc_attr( $background_color ) . ';}
+	#expire_breadcrumbs_section:after{ border-bottom-color: #' . esc_attr( $background_color ) . ';}';
 
 /**
  * Main color customizer setting
@@ -117,6 +117,16 @@ if ( '' !== $body_text_color ) {
 }
 
 /**
+ * Header background color customizer setting
+ *
+ * @var string
+ */
+$header_background_color = get_theme_mod( 'header_background_color' );
+if ( '' !== $header_background_color ) {
+	$custom_css .= '.expire_main_header{background-color:' . esc_attr( $header_background_color ) . ';}';
+}
+
+/**
  * Links hover color customizer setting
  *
  * @var string
@@ -147,52 +157,4 @@ if ( '' !== $links_hover ) {
 		.widget_calendar tbody a:hover,
 		footer a:hover i{color:' . esc_attr( $links_hover ) . ';}
     	.blog .post_content_inner_wrapper .more-link:hover{border-color:' . esc_attr( $links_hover ) . ';}';
-}
-
-/**
- * Header logo customizer setting
- *
- * @var string
- */
-$header_retina_logo = get_theme_mod( 'header_retina_logo' );
-
-if ( '' !== $header_retina_logo ) {
-	$header_logo               = get_theme_mod( 'custom_logo' );
-	$retina_logo_size          = wp_get_attachment_image_src( $header_logo );
-	$header_retina_logo_width  = intval( $retina_logo_size[1] );
-	$header_retina_logo_height = intval( $retina_logo_size[2] );
-
-	$custom_css .= '
-		#main_logo {display: block ;}
-		#retina_logo {display: none; width: ' . $header_retina_logo_width . 'px; max-height: ' . $header_retina_logo_height . 'px; height: auto;}
-		@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
-		only screen and (-o-min-device-pixel-ratio: 13/10 ),
-		only screen and (min-resolution: 120dpi) {
-			#main_logo {display: none ;}
-			#retina_logo {display: block ;}
-		}';
-}
-
-/**
- * Footer logo customizer setting
- *
- * @var string
- */
-$footer_retina_logo = get_theme_mod( 'footer_retina_logo', '' );
-
-if ( '' !== $footer_retina_logo ) {
-	$footer_logo               = get_theme_mod( 'footer_logo', '' );
-	$footer_retina_logo_size   = wp_get_attachment_image_src( $footer_logo );
-	$footer_retina_logo_width  = intval( $footer_retina_logo_size[1] );
-	$footer_retina_logo_height = intval( $footer_retina_logo_size[2] );
-
-	$custom_css .= '
-		#footer_main_logo {display: block ;}
-		#footer_retina_logo {display: none; width: ' . $footer_retina_logo_width . 'px; max-height: ' . $footer_retina_logo_height . 'px; height: auto;}
-		@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
-		only screen and (-o-min-device-pixel-ratio: 13/10 ),
-		only screen and (min-resolution: 120dpi) {
-			#footer_main_logo {display: none ;}
-			#footer_retina_logo {display: block ;}
-		}';
 }

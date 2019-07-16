@@ -730,6 +730,18 @@ a.skip-link:focus {
 }
 
 /*************** 3. Header ***************/
+.expire_main_header {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.has_header_image {
+	display: block;
+}
+
 #logo {
 	float: left;
 	margin: 0;
@@ -1264,6 +1276,7 @@ nav > ul ul ul:before {
 	background: #fff;
 	width: 50%;
 	border-bottom: 1px solid #e6e9ed;
+	z-index: 10;
 }
 
 .blog .post_content_inner_wrapper .post_info .post_type {
@@ -1972,6 +1985,7 @@ aside .sidebar-widget-heading a {
 	background: #3e3d3d;
 	color: #fff;
 	padding: 35px 0 25px 0;
+	border-top: 1px solid inherit;
 }
 
 .footer_copyright {
@@ -2252,25 +2266,8 @@ aside .sidebar-widget-heading a {
 }
 
 .wp-block-button__link {
-	display: inline-block;
-	vertical-align: baseline;
-	max-width: 100%;
-	margin: 0;
-    border: 1px solid;
-    border-color: inherit;
-	border-radius: 0;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 12px 33px 13px 34px;
-    -webkit-transition: all 250ms ease-in;
-    transition: all 250ms ease-in;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	padding: 12px 33px 13px 34px;
 }
-
-.wp-block-button__link:hover,
-.wp-block-button__link:focus {
-
-}
-

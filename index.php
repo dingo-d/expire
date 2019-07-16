@@ -82,6 +82,7 @@ get_header(); ?>
 								</h3>
 								<div class="post_meta">
 									<i class="ti-user"></i><?php esc_html_e( 'By ', 'expire' ); ?><span><?php the_author_posts_link(); ?></span>
+									<?php if ( ! get_theme_mod( 'hide_comments', false ) ) : ?>
 									<i class="ti-comment"></i>
 									<a href="<?php comments_link(); ?>" class="scroll comments_link">
 										<?php $comment_number = get_comments_number();
@@ -99,6 +100,7 @@ get_header(); ?>
 										);
 										?>
 									</a>
+									<?php endif; ?>
 									<i class="ti-tag"></i><span class="post_category"><?php the_category( ', ' )?></span>
 								</div>
 								<div class="post_content_text"><?php the_content( '' ); ?></div>

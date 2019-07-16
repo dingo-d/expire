@@ -22,6 +22,8 @@ define( 'EXPIRE_TEMPDIR', get_template_directory() );
 
 require EXPIRE_TEMPDIR . '/inc/support.php';
 
+require EXPIRE_TEMPDIR . '/inc/metabox-page.php';
+
 /**
  * Theme Customizer
  */
@@ -319,5 +321,16 @@ if ( ! function_exists( 'expire_sanitize_integer' ) ) {
 		} else {
 			return '';
 		}
+	}
+}
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Backwards compatibility for wp_body_open() function
+	 *
+	 * @return void
+	 */
+	function wp_body_open() {
+			do_action( 'wp_body_open' );
 	}
 }

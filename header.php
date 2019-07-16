@@ -26,15 +26,13 @@ wp_head();
 
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open();
 
-<?php
 echo ( get_theme_mod( 'boxed_body', false ) ) ? '<div class="boxed_body_wrapper">' : '';
-$name               = get_bloginfo( 'name' );
-$description        = get_bloginfo( 'description' );
-$header_retina_logo = get_theme_mod( 'header_retina_logo' );
-$header_class       = has_header_image() ? 'class="has_header_image"' : '';
-$custom_logo_id     = get_theme_mod( 'custom_logo' );
-$logo               = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+$name           = get_bloginfo( 'name' );
+$header_class   = has_header_image() ? 'class="expire_main_header has_header_image"' : 'class="expire_main_header"';
+$custom_logo_id = get_theme_mod( 'custom_logo' );
+$logo           = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
 	<header id="expire_main_header" <?php echo wp_kses_post( $header_class ); ?>>
 		<a class="skip-link" href="#main-content" tabindex="0"><?php esc_html_e( 'Skip to the main content', 'expire' ); ?></a>
@@ -44,9 +42,7 @@ $logo               = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 					<?php
 					if ( isset( $custom_logo_id ) && ! empty( $custom_logo_id ) ) : ?>
 						<img id="main_logo" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php echo esc_attr( $name ); ?>">
-						<?php if ( isset( $header_retina_logo ) && 0 !== $header_retina_logo ) : ?>
-							<img id="retina_logo" src="<?php echo esc_url( wp_get_attachment_url( $header_retina_logo ) ); ?>" alt="<?php echo esc_attr( $name ); ?>">
-						<?php endif;
+					<?php
 					else :
 						if ( display_header_text() ) : ?>
 							<h1 id="main_logo_textual"><?php echo esc_html( $name ); ?></h1>
@@ -60,41 +56,5 @@ $logo               = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 			<div id="expire_menu_toggle"><div class="expire_hamburger_menu"><span></span></div></div>
 		</div>
 	</header>
-	<?php if ( get_theme_mod( 'show_title_bar', true ) ) : ?>
-	<section id="expire_title_bar">
-		<div class="container">
-			<div class="row">
-				<div class="span12 left_aligned">
-					<?php if ( is_404() ) : ?>
-						<h2><?php esc_html_e( 'Page not found', 'expire' ); ?></h2>
-					<?php elseif ( is_search() ) : ?>
-						<h2><?php esc_html_e( 'Search results', 'expire' ); ?></h2>
-					<?php elseif ( is_day() ) : ?>
-						<h2><?php echo esc_html( get_the_time( 'd' ) . ', ' . get_the_time( 'F' ) . ', ' . get_the_time( 'Y' ) ); ?></h2>
-					<?php elseif ( is_month() ) : ?>
-						<h2><?php echo esc_html( get_the_time( 'F' ) . ', ' . get_the_time( 'Y' ) ); ?></h2>
-					<?php elseif ( is_year() ) : ?>
-						<h2><?php echo esc_html( get_the_time( 'Y' ) ); ?></h2>
-					<?php elseif ( is_category() ) : ?>
-						<?php
-							$category    = get_category( get_query_var( 'cat' ) );
-							$category_id = $category->cat_ID;
-						?>
-						<h2><?php echo esc_html( get_cat_name( $category_id ) ); ?></h2>
-					<?php elseif ( ( is_home() || is_front_page() ) && display_header_text() ) : ?>
-						<h2 id="main_tagline"><?php echo esc_html( $description ); ?></h2>
-					<?php else : ?>
-						<h2><?php the_archive_title(); ?></h2>
-					<?php endif; ?>
-				</div>
-			</div>
-		</div>
-		<div id="expire_breadcrumbs_section">
-			<div class="container">
-				<div class="row">
-					<?php expire_simple_breadcrumb(); ?>
-				</div>
-			</div>
-		</div>
-	</section>
-	<?php endif; ?>
+	<?php get_template_part( 'template-parts/header/title', 'bar' ); ?>
+
