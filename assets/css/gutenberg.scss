@@ -8,7 +8,7 @@ $pullquote-width-margin: $pullquote-width + 20;
 .wp-block {
 	.editor-post-title {
 		&__input {
-			font-family: 'Open Sans', sans-serif;
+			font-family: 'Raleway', sans-serif;
 		}
 	}
 }
@@ -16,7 +16,7 @@ $pullquote-width-margin: $pullquote-width + 20;
 .edit-post-layout {
 	&__content {
 		p.wp-block-paragraph {
-			font-family: 'Open Sans', sans-serif;
+			font-family: 'Raleway', sans-serif;
 			color: $main-text-color;
 			font-size: 16px;
 			line-height: 1.65;
@@ -34,7 +34,7 @@ $pullquote-width-margin: $pullquote-width + 20;
 }
 
 .wp-block-heading {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 
 	h1 {
 		font-size: 3.571em;
@@ -83,7 +83,7 @@ h6 {
 blockquote {
 	font-size: 18px;
 	line-height: 28px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	color: #4e5860;
 	font-style: italic;
@@ -161,6 +161,10 @@ cite {
 				}
 			}
 		}
+
+		&[data-type="core/cover"] {
+			max-width: 100%;
+		}
 	}
 }
 
@@ -197,3 +201,23 @@ cite {
 		padding: 12px 33px 13px 34px;
 	}
 }
+
+.wp-block-cover {
+	&__inner-container {
+		font-family: 'Raleway', sans-serif;
+		font-weight: 600;
+	}
+
+	&.full-height {
+		height: 100vh;
+	}
+}
+
+.wp-block-media-text.alignfull .wp-block-media-text__content {
+	padding: 0;
+}
+
+.wp-block-media-text__content p {
+	margin-bottom: 0;
+}
+

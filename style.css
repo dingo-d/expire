@@ -156,7 +156,7 @@ section {
 }
 
 .page_main_section {
-	padding: 40px 0;
+	padding: 0;
 }
 
 ol {
@@ -753,8 +753,9 @@ a.skip-link:focus {
 
 #main_logo_textual {
 	font-size: 32px;
+	line-height: 1;
 	color: #3e3d3d;
-	margin: 21px 0 0 0;
+	margin: 26px 0 21px;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
 }
@@ -779,6 +780,12 @@ nav {
 
 nav > ul {
 	list-style: none;
+	margin: 27px 0 0 0;
+	float: right;
+}
+
+.has_header_image nav > ul {
+	list-style: none;
 	margin: 37px 0 0 0;
 	float: right;
 }
@@ -792,7 +799,7 @@ nav > ul > li > a {
 	color: #3e3d3d;
 	font-size: 18px;
 	font-family: 'Raleway', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	text-transform: uppercase;
 	padding: 0 20px;
 	position: relative;
@@ -1019,6 +1026,7 @@ nav > ul ul ul:before {
 /*************** 4. Title Breadcrumbs Bar ***************/
 #expire_title_bar {
 	padding: 80px 0 0;
+	margin-bottom: 40px;
 }
 
 #expire_title_bar h2 {
@@ -2215,6 +2223,12 @@ aside .sidebar-widget-heading a {
 	max-width: none;
 }
 
+.alignfull {
+	width: 100vw;
+	margin-left: calc( ( 100vw - 1170px ) / -2 );
+	max-width: none;
+}
+
 /* In a post it shouldn't overflow */
 
 .post_content .wp-block-cover {
@@ -2270,4 +2284,21 @@ aside .sidebar-widget-heading a {
 	font-weight: 600;
 	font-size: 14px;
 	padding: 12px 33px 13px 34px;
+}
+
+.wp-block-cover__inner-container {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+}
+
+.wp-block-cover.full-height {
+	height: 100vh;
+}
+
+.wp-block-media-text.alignfull .wp-block-media-text__content {
+	padding: 0;
+}
+
+.wp-block-media-text__content p {
+	margin-bottom: 0;
 }

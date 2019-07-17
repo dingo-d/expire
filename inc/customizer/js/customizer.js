@@ -16,7 +16,7 @@
 
 	function expire_dynamic_css_targets( value ) {
 		var css_styles_targets = '<style id="customizer_dynamic_css_' + value + '" type="text/css"></style>';
-console.log(value);
+
 		if ( ! $( '#customizer_dynamic_css_' + value ).length) {
 			$( '#expire-main-css-inline-css' ).after( css_styles_targets );
 		}
@@ -75,6 +75,15 @@ console.log(value);
 			expire_dynamic_css_targets( 'header_background_color' );
 			var new_colors = '.expire_main_header{background-color:' + newval + ';}';
 			$( '#customizer_dynamic_css_header_background_color' ).text( new_colors );
+		});
+	});
+
+	// Menu text color.
+	api( 'menu_text_color', function(value) {
+		value.bind(function(newval) {
+			expire_dynamic_css_targets( 'menu_text_color' );
+			var new_colors = '.has_header_image nav > ul > li > a{color:' + newval + ';}';
+			$( '#customizer_dynamic_css_menu_text_color' ).text( new_colors );
 		});
 	});
 

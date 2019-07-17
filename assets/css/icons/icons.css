@@ -1,83 +1,176 @@
 @font-face {
-	font-family: 'icomoon';
-	src:  url('fonts/icomoon.eot');
-	src:  url('fonts/icomoon.eot#iefix') format('embedded-opentype'),
-	url('fonts/icomoon.ttf') format('truetype'),
-	url('fonts/icomoon.woff') format('woff'),
-	url('fonts/icomoon.svg#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'themify';
+  src:  url('fonts/themify.eot');
+  src:  url('fonts/themify.eot#iefix') format('embedded-opentype'),
+    url('fonts/themify.ttf') format('truetype'),
+    url('fonts/themify.woff') format('woff'),
+    url('fonts/themify.svg#themify') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 [class^="ti-"], [class*=" ti-"] {
-	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: 'icomoon' !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'themify' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.ti-user:before {
-	content: "\e602";
+.ti-alert:before {
+  content: "\e902";
 }
-.ti-tag:before {
-	content: "\e608";
+.ti-angle-down:before {
+  content: "\e90d";
 }
-.ti-search:before {
-	content: "\e610";
+.ti-angle-left:before {
+  content: "\e90e";
 }
-.ti-pencil:before {
-	content: "\e61c";
+.ti-angle-right:before {
+  content: "\e90f";
 }
-.ti-pencil-alt:before {
-	content: "\e61d";
+.ti-angle-up:before {
+  content: "\e910";
 }
-.ti-link:before {
-	content: "\e62d";
+.ti-arrow-down:before {
+  content: "\e918";
 }
-.ti-image:before {
-	content: "\e633";
+.ti-arrow-left:before {
+  content: "\e919";
 }
-.ti-comment-alt:before {
-	content: "\e643";
+.ti-arrow-right:before {
+  content: "\e91a";
+}
+.ti-arrow-top-left:before {
+  content: "\e91b";
+}
+.ti-arrows-corner:before {
+  content: "\e91f";
+}
+.ti-check-box:before {
+  content: "\e935";
+}
+.ti-check:before {
+  content: "\e936";
+}
+.ti-close:before {
+  content: "\e939";
 }
 .ti-comment:before {
-	content: "\e644";
+  content: "\e93e";
 }
-.ti-quote:before {
-	content: "\e67e";
+.ti-comments:before {
+  content: "\e940";
 }
-.ti-music-alt:before {
-	content: "\e689";
+.ti-crown:before {
+  content: "\e94c";
 }
-.ti-video-clapper:before {
-	content: "\e6ce";
-}
-.ti-gallery:before {
-	content: "\e71e";
-}
-.ti-linkedin:before {
-	content: "\e735";
-}
-.ti-instagram:before {
-	content: "\e73d";
-}
-.ti-google:before {
-	content: "\e73e";
+.ti-cup:before {
+  content: "\e94e";
 }
 .ti-facebook:before {
-	content: "\e741";
+  content: "\e961";
 }
-.ti-wordpress:before {
-	content: "\e749";
+.ti-gallery:before {
+  content: "\e96c";
+}
+.ti-google:before {
+  content: "\e970";
+}
+.ti-heart:before {
+  content: "\e97d";
+}
+.ti-hummer:before {
+  content: "\e982";
+}
+.ti-image:before {
+  content: "\e984";
+}
+.ti-infinite:before {
+  content: "\e986";
+}
+.ti-instagram:before {
+  content: "\e98a";
+}
+.ti-layers-alt:before {
+  content: "\e98f";
+}
+.ti-layout-grid2-alt:before {
+  content: "\e99f";
+}
+.ti-layout-grid2:before {
+  content: "\e9a1";
+}
+.ti-layout-slider-alt:before {
+  content: "\e9bd";
+}
+.ti-light-bulb:before {
+  content: "\e9c7";
+}
+.ti-link:before {
+  content: "\e9cb";
+}
+.ti-linkedin:before {
+  content: "\e9cc";
+}
+.ti-location-arrow:before {
+  content: "\e9d0";
+}
+.ti-location-pin:before {
+  content: "\e9d1";
+}
+.ti-music-alt:before {
+  content: "\e9e8";
+}
+.ti-package:before {
+  content: "\e9ed";
+}
+.ti-pencil-alt:before {
+  content: "\e9f3";
+}
+.ti-pencil:before {
+  content: "\e9f5";
+}
+.ti-quote-right:before {
+  content: "\ea02";
+}
+.ti-ruler-alt-2:before {
+  content: "\ea09";
+}
+.ti-search:before {
+  content: "\ea0f";
+}
+.ti-shine:before {
+  content: "\ea1b";
+}
+.ti-star:before {
+  content: "\ea2a";
+}
+.ti-tag:before {
+  content: "\ea2f";
+}
+.ti-thought:before {
+  content: "\ea35";
 }
 .ti-twitter:before {
-	content: "\e74b";
+  content: "\ea40";
+}
+.ti-user:before {
+  content: "\ea47";
+}
+.ti-video-clapper:before {
+  content: "\ea4a";
+}
+.ti-wordpress:before {
+  content: "\ea58";
+}
+.ti-youtube:before {
+  content: "\ea5c";
 }

@@ -75,8 +75,8 @@ Initial release
 == Licensing ==
 
 === Themify Icons ===
-- http://themify.me/themify-icons
-- Themify Icons font licensed under: http://scripts.sil.org/OFL
+- https://themify.me/themify-icons
+- Themify Icons font licensed under: https://scripts.sil.org/OFL
 - Code licensed under: http://opensource.org/licenses/mit-license.html
 - All brand icons are copyright/trademarks of their respective owners.
 - Icons used made with Icomoon App
@@ -85,6 +85,8 @@ Initial release
 
 Bundled image for default header image: http://mystock.themeisle.com/photo/sea-breeze/
 Licensed under Creative Commons Zero (CC0)
+
+https://www.pexels.com/photo/beach-foam-landscape-nature-533923/ Licensed under Creative Commons Zero (CC0)
 
 Screenshot image contains image from the unit data test (Sydney Harbor Bridge) which has the following description:
 Public domain via http://www.burningwell.org/gallery2/v/Objects/dsc09114.jpg.html

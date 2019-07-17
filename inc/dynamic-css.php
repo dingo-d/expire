@@ -127,6 +127,16 @@ if ( '' !== $header_background_color ) {
 }
 
 /**
+ * Header menu text color customizer setting
+ *
+ * @var string
+ */
+$menu_text_color = get_theme_mod( 'menu_text_color' );
+if ( '' !== $menu_text_color ) {
+	$custom_css .= '.has_header_image nav > ul > li > a{color:' . esc_attr( $menu_text_color ) . ';}';
+}
+
+/**
  * Links hover color customizer setting
  *
  * @var string

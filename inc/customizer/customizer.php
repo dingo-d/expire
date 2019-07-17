@@ -274,6 +274,21 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 		'settings' => 'header_background_color',
 		'section'  => 'colors',
 	) ));
+
+	/**
+	Menu Text Color
+	*/
+	$wp_customize->add_setting( 'menu_text_color', array(
+		'default'           => '#ffffff',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_text_color', array(
+		'label'    => esc_html__( 'Menu Text Color', 'expire' ),
+		'settings' => 'menu_text_color',
+		'section'  => 'colors',
+	) ));
+
 	/**
 	Links Hover
 	*/
