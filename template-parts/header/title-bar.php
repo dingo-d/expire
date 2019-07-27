@@ -33,6 +33,8 @@ $description = get_bloginfo( 'description' );
 			<div class="span12 left_aligned">
 				<?php if ( is_404() ) : ?>
 					<h2><?php esc_html_e( 'Page not found', 'expire' ); ?></h2>
+				<?php elseif ( is_singular() ) : ?>
+					<h2><?php echo esc_html( get_the_title() ); ?></h2>
 				<?php elseif ( is_search() ) : ?>
 					<h2><?php esc_html_e( 'Search results', 'expire' ); ?></h2>
 				<?php elseif ( is_day() ) : ?>

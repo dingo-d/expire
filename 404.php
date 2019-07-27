@@ -17,6 +17,7 @@ Template Name: 404 page
 */
 
 $alternative_404_page = get_theme_mod( 'alternative_404_page', false );
+
 if ( $alternative_404_page && is_404() ) {
 	wp_safe_redirect( get_permalink( $alternative_404_page ) );
 	exit;
