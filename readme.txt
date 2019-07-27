@@ -31,7 +31,7 @@ https://github.com/dingo-d/expire
 = 1.1.0 =
 Update theme and tested with latest WordPress version (5.2.2)
 Add styles for all Gutenberg blocks
-Updated the theme to meet the current Theme Review standards
+Updated the theme to meet the current Theme Review standards (skip links and some keyboard navigation)
 Changed bundled images to be GPL compatible
 Change License to MIT
 
@@ -86,7 +86,7 @@ Initial release
 Bundled image for default header image: http://mystock.themeisle.com/photo/sea-breeze/
 Licensed under Creative Commons Zero (CC0)
 
-https://www.pexels.com/photo/beach-foam-landscape-nature-533923/ Licensed under Creative Commons Zero (CC0)
+Screenshot image contains:
 
-Screenshot image contains image from the unit data test (Sydney Harbor Bridge) which has the following description:
-Public domain via http://www.burningwell.org/gallery2/v/Objects/dsc09114.jpg.html
+https://www.pexels.com/photo/beach-foam-landscape-nature-533923/
+Licensed under Creative Commons Zero (CC0)
