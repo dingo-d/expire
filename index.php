@@ -3,15 +3,17 @@
  * Main template file
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
 get_header(); ?>
-<section class="blog blog_full_width">
+<section id="main-content" class="blog blog_full_width">
 	<div class="container">
 		<div class="row">
 			<div class="span12 blog_category_index">
@@ -80,6 +82,7 @@ get_header(); ?>
 								</h3>
 								<div class="post_meta">
 									<i class="ti-user"></i><?php esc_html_e( 'By ', 'expire' ); ?><span><?php the_author_posts_link(); ?></span>
+									<?php if ( ! get_theme_mod( 'hide_comments', false ) ) : ?>
 									<i class="ti-comment"></i>
 									<a href="<?php comments_link(); ?>" class="scroll comments_link">
 										<?php $comment_number = get_comments_number();
@@ -97,6 +100,7 @@ get_header(); ?>
 										);
 										?>
 									</a>
+									<?php endif; ?>
 									<i class="ti-tag"></i><span class="post_category"><?php the_category( ', ' )?></span>
 								</div>
 								<div class="post_content_text"><?php the_content( '' ); ?></div>

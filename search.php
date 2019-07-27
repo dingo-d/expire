@@ -3,16 +3,18 @@
  * Search
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
 get_header(); ?>
 
-<section class="page_main_section">
+<section id="main-content" class="page_main_section">
 	<div class="container">
 		<h2><?php esc_html_e( 'Showing Results for: ', 'expire' ); ?> <?php the_search_query(); ?> (<?php echo esc_html( $wp_query->found_posts ); ?>)</h2>
 		<div class="row">

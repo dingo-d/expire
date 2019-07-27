@@ -3,10 +3,12 @@
  * Breadcrumbs
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
@@ -21,11 +23,11 @@ if ( ! function_exists( 'expire_simple_breadcrumb' ) ) {
 		$link = '<a href="%s">%s</a>';
 
 		if ( ( is_home() || is_front_page() ) && ! is_page() ) {
-			echo '<div class="breadcrumbs">' . sprintf( // WPCS: XSS OK.
-			$link, esc_url( home_url( '/' ) ), esc_html__( 'Home', 'expire' ) );
+			echo '<div class="breadcrumbs">' . sprintf(
+			$link, esc_url( home_url( '/' ) ), esc_html__( 'Home', 'expire' ) ); // phpcs:ignore
 		} else {
-			echo '<div class="breadcrumbs">' . sprintf( // WPCS: XSS OK.
-			$link, esc_url( home_url( '/' ) ), esc_html__( 'Home', 'expire' ) ) . '<span class="breadcrumb_delimiter"></span> ';
+			echo '<div class="breadcrumbs">' . sprintf(
+			$link, esc_url( home_url( '/' ) ), esc_html__( 'Home', 'expire' ) ) . '<span class="breadcrumb_delimiter"></span> '; // phpcs:ignore
 		}
 
 		if ( is_category() ) {
@@ -62,15 +64,15 @@ if ( ! function_exists( 'expire_simple_breadcrumb' ) ) {
 			echo '<span class="current">' . sprintf( esc_html__( 'Search Results for "%s"', 'expire' ), get_search_query() ) . '</span>';
 
 		} elseif ( is_day() ) {
-			echo sprintf( // WPCS: XSS OK.
-			$link, get_year_link( get_the_time( 'Y' ) ), get_the_time( 'Y' ) ) . '<span class="breadcrumb_delimiter"></span> ';
-			echo sprintf( // WPCS: XSS OK.
-			$link, get_month_link( get_the_time( 'Y' ),get_the_time( 'm' ) ), get_the_time( 'F' ) ) . '<span class="breadcrumb_delimiter"></span> ';
+			echo sprintf(
+			$link, get_year_link( get_the_time( 'Y' ) ), get_the_time( 'Y' ) ) . '<span class="breadcrumb_delimiter"></span> '; // phpcs:ignore
+			echo sprintf(
+			$link, get_month_link( get_the_time( 'Y' ),get_the_time( 'm' ) ), get_the_time( 'F' ) ) . '<span class="breadcrumb_delimiter"></span> '; // phpcs:ignore
 			echo '<span class="current">' . esc_html( get_the_time( 'd' ) ) . '</span>';
 
 		} elseif ( is_month() ) {
-			echo sprintf( // WPCS: XSS OK.
-			$link, get_year_link( get_the_time( 'Y' ) ), get_the_time( 'Y' ) ) . '<span class="breadcrumb_delimiter"></span> ';
+			echo sprintf(
+			$link, get_year_link( get_the_time( 'Y' ) ), get_the_time( 'Y' ) ) . '<span class="breadcrumb_delimiter"></span> '; // phpcs:ignore
 			echo '<span class="current">' . esc_html( get_the_time( 'F' ) ) . '</span>';
 
 		} elseif ( is_year() ) {
@@ -82,11 +84,11 @@ if ( ! function_exists( 'expire_simple_breadcrumb' ) ) {
 				$slug = $post_type->rewrite;
 				$archive_link = get_post_type_archive_link( $post_type );
 				if ( false !== $archive_link ) {
-					printf( // WPCS: XSS OK.
-					$link, $archive_link, $post_type->labels->singular_name );
+					printf(
+					$link, $archive_link, $post_type->labels->singular_name ); // phpcs:ignore
 				} else {
-					printf( // WPCS: XSS OK.
-					'<span class="post_type">%s</span>', $post_type->labels->singular_name );
+					printf(
+					'<span class="post_type">%s</span>', $post_type->labels->singular_name ); // phpcs:ignore
 				}
 				echo '<span class="breadcrumb_delimiter"></span><span class="current">' . esc_html( wp_trim_words( get_the_title(), 4 ) ) . '</span>';
 			} else {
@@ -105,8 +107,8 @@ if ( ! function_exists( 'expire_simple_breadcrumb' ) ) {
 			$cat = get_the_category( $parent->ID );
 			$cat = $cat[0];
 			echo wp_kses_post( get_category_parents( $cat, true, '<span class="breadcrumb_delimiter"></span> ' ) );
-			printf( // WPCS: XSS OK.
-			$link, get_permalink( $parent ), $parent->post_title );
+			printf(
+			$link, get_permalink( $parent ), $parent->post_title ); // phpcs:ignore
 			echo '<span class="breadcrumb_delimiter"></span><span class="current">' . esc_html( get_the_title() ) . '</span>';
 
 		} elseif ( is_page() && ! $post->post_parent ) {
@@ -117,14 +119,14 @@ if ( ! function_exists( 'expire_simple_breadcrumb' ) ) {
 			$breadcrumbs = array();
 			while ( $parent_id ) {
 				$page = get_page( $parent_id );
-				$breadcrumbs[] = sprintf( // WPCS: XSS OK.
+				$breadcrumbs[] = sprintf(
 				$link, get_permalink( $page->ID ), get_the_title( $page->ID ) );
 				$parent_id  = $page->post_parent;
 			}
 			$breadcrumbs = array_reverse( $breadcrumbs );
 			$bc_number = count( $breadcrumbs );
 			for ( $i = 0; $i < $bc_number; $i++ ) {
-				echo '' . $breadcrumbs[ $i ]; // WPCS: XSS OK.
+				echo '' . $breadcrumbs[ $i ]; // phpcs:ignore
 				if ( $i !== $bc_number -1 ) {
 					echo '<span class="breadcrumb_delimiter"></span> ';
 				}
@@ -138,7 +140,7 @@ if ( ! function_exists( 'expire_simple_breadcrumb' ) ) {
 		} elseif ( is_author() ) {
 	 		global $author;
 			$userdata = get_userdata( $author );
-			echo '<span class="current">' . sprintf( // WPCS: XSS OK.
+			echo '<span class="current">' . sprintf( // phpcs:ignore
 				// translators: Breadcrumbs title for author posts.
 			esc_html__( 'Articles by "%s"', 'expire' ), wp_kses_post( $userdata->display_name ) ) . '</span>';
 
@@ -150,7 +152,7 @@ if ( ! function_exists( 'expire_simple_breadcrumb' ) ) {
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) {
 				echo ' ( ';
 			}
-			echo '<span class="breadcrumb_delimiter"></span><span class="current">' . esc_html__( 'Page', 'expire' ) . ' ' . get_query_var( 'paged' ) . '</span>'; // WPCS: XSS OK.
+			echo '<span class="breadcrumb_delimiter"></span><span class="current">' . esc_html__( 'Page', 'expire' ) . ' ' . get_query_var( 'paged' ) . '</span>'; // phpcs:ignore
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) {
 				echo ' )';
 			}

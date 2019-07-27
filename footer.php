@@ -3,25 +3,24 @@
  * Footer
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
-$footer_facebook           = get_theme_mod( 'footer_facebook', '' );
-$footer_twitter            = get_theme_mod( 'footer_twitter', '' );
-$footer_linkedin           = get_theme_mod( 'footer_linkedin', '' );
-$footer_gplus              = get_theme_mod( 'footer_gplus', '' );
-$footer_instagram          = get_theme_mod( 'footer_instagram', '' );
-$footer_target             = get_theme_mod( 'footer_target', '' );
-$show_social               = get_theme_mod( 'show_social', '' );
-$footer_logo               = get_theme_mod( 'footer_logo', '' );
-$footer_retina_logo        = get_theme_mod( 'footer_retina_logo', '' );
-$footer_copyright 		   = get_theme_mod( 'footer_copyright', '' );
-
-
+$footer_facebook    = get_theme_mod( 'footer_facebook', '' );
+$footer_twitter     = get_theme_mod( 'footer_twitter', '' );
+$footer_linkedin    = get_theme_mod( 'footer_linkedin', '' );
+$footer_gplus       = get_theme_mod( 'footer_gplus', '' );
+$footer_instagram   = get_theme_mod( 'footer_instagram', '' );
+$footer_target      = get_theme_mod( 'footer_target', '' );
+$show_social        = get_theme_mod( 'show_social', '' );
+$footer_logo        = get_theme_mod( 'footer_logo', '' );
+$footer_copyright   = get_theme_mod( 'footer_copyright', '' );
 
 $span1 = '';
 $span2 = '';
@@ -64,7 +63,7 @@ if ( $show_social ) {
 }
 
 ?>
-<footer id="expire_main_footer">
+<footer id="expire_main_footer" class="main-footer">
 	<div class="container">
 		<div class="row">
 		<?php if ( $show_social ) : ?>
@@ -94,9 +93,7 @@ if ( $show_social ) {
 					<?php
 					if ( '' !== $footer_logo ) : ?>
 						<img id="footer_main_logo" src="<?php echo esc_url( wp_get_attachment_url( $footer_logo ) ); ?>" alt="<?php echo esc_attr( $name ); ?>">
-						<?php if ( isset( $footer_retina_logo ) && 0 !== $footer_retina_logo ) : ?>
-						<img id="footer_retina_logo" src="<?php echo esc_url( wp_get_attachment_url( $footer_retina_logo ) ); ?>" alt="<?php echo esc_attr( $name ); ?>">
-						<?php endif;
+					<?php
 					else : ?>
 						<h1 id="footer_logo_textual"><?php echo esc_html( $name ); ?></h1>
 						<?php if ( '' !== $description ) : ?>

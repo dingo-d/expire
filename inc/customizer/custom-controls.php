@@ -3,10 +3,12 @@
  * Customizer custom controls
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version.
  * @since  1.0.0
  */
 
@@ -16,10 +18,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 *
 	 * @package WordPress
 	 * @package Expire
-	 * @version 1.0.9
+	 * @version 1.1.0
 	 * @author Denis Žoljom <denis.zoljom@gmail.com>
-	 * @license http://www.gnu.org/licenses/gpl-2.0.txt
+	 * @license https://opensource.org/licenses/MIT MIT
 	 * @link https://madebydenis.com/expire
+	 *
+	 * @since  1.1.0 Updated license version.
 	 * @since  1.0.0
 	 */
 	class Expire_Info_Custom_Control extends WP_Customize_Control {
@@ -47,10 +51,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 *
 	 * @package WordPress
 	 * @package Expire
-	 * @version 1.0.9
+	 * @version 1.1.0
 	 * @author Denis Žoljom <denis.zoljom@gmail.com>
-	 * @license http://www.gnu.org/licenses/gpl-2.0.txt
+	 * @license https://opensource.org/licenses/MIT MIT
 	 * @link https://madebydenis.com/expire
+	 *
+	 * @since  1.1.0 Updated license version.
 	 * @since  1.0.0
 	 */
 	class Expire_Separator_Custom_Control extends WP_Customize_Control {
@@ -77,10 +83,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 *
 	 * @package WordPress
 	 * @package Expire
-	 * @version 1.0.9
+	 * @version 1.1.0
 	 * @author Denis Žoljom <denis.zoljom@gmail.com>
-	 * @license http://www.gnu.org/licenses/gpl-2.0.txt
+	 * @license https://opensource.org/licenses/MIT MIT
 	 * @link https://madebydenis.com/expire
+	 *
+	 * @since  1.1.0 Updated license version.
 	 * @since  1.0.0
 	 */
 	class Expire_Toggle_Checkbox_Custom_Control extends WP_Customize_Control {
@@ -108,8 +116,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			?>
 			<div class="checkbox_switch">
 				<div class="onoffswitch">
-				    <input type="checkbox" id="<?php echo esc_attr( $this->id ); ?>" name="<?php echo esc_attr( $this->id ); ?>" class="onoffswitch-checkbox" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> <?php $this->link() . checked( $this->value() ); ?>>
-				    <label class="onoffswitch-label" for="<?php echo esc_attr( $this->id ); ?>"></label>
+						<input type="checkbox" id="<?php echo esc_attr( $this->id ); ?>" name="<?php echo esc_attr( $this->id ); ?>" class="onoffswitch-checkbox" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> <?php $this->link() . checked( $this->value() ); ?>>
+						<label class="onoffswitch-label" for="<?php echo esc_attr( $this->id ); ?>"></label>
 				</div>
 				<span class="customize-control-title onoffswitch_label"><?php echo esc_html( $this->label ); ?></span>
 				<p><?php echo esc_html( $this->description ); ?></p>
@@ -123,10 +131,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 *
 	 * @package WordPress
 	 * @package Expire
-	 * @version 1.0.9
+	 * @version 1.1.0
 	 * @author Denis Žoljom <denis.zoljom@gmail.com>
-	 * @license http://www.gnu.org/licenses/gpl-2.0.txt
+	 * @license https://opensource.org/licenses/MIT MIT
 	 * @link https://madebydenis.com/expire
+	 *
+	 * @since  1.1.0 Updated license version.
 	 * @since  1.0.0
 	 */
 	class Expire_Slider_Control extends WP_Customize_Control {

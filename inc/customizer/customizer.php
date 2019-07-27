@@ -3,17 +3,19 @@
  * Customizer
  *
  * @package Expire
- * @version 1.0.9
+ * @version 1.1.0
  * @author Denis Žoljom <denis.zoljom@gmail.com>
- * @license http://www.gnu.org/licenses/gpl-2.0.txt
+ * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
+ *
+ * @since  1.1.0 Updated license version. Remove some options, add hide breadcrumbs options.
  * @since  1.0.0
  */
 
 /**
  * Including custom controls
  */
-require_once( EXPIRE_TEMPDIR . '/inc/customizer/custom-controls.php' );
+require EXPIRE_TEMPDIR . '/inc/customizer/custom-controls.php'; // phpcs:ignore
 
 add_action( 'customize_register', 'expire_customize_register', 11 );
 /**
@@ -122,6 +124,20 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 	) ) );
 
 	/**
+	Show title bar
+	*/
+	$wp_customize->add_setting( 'show_title_bar', array(
+		'default'           => false,
+		'sanitize_callback' => 'expire_checkbox_sanitization',
+	) );
+	$wp_customize->add_control( new Expire_Toggle_Checkbox_Custom_Control( $wp_customize, 'show_title_bar', array(
+		'label'    	  => esc_html__( 'Show Title Bar', 'expire' ),
+		'description' => esc_html__( 'Check this to hide the title bar on all pages', 'expire' ),
+		'type'     	  => 'checkbox',
+		'section'  	  => 'section_general',
+	) ) );
+
+	/**
 	Separator
 	*/
 	expire_customizer_separator_control( $wp_customize, 'section_general' );
@@ -195,26 +211,6 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 
 	/**
 	------------------------------------------------------------
-	SECTION: Site Identity
-	------------------------------------------------------------
-	*/
-
-	/**
-	Retina Header Logo
-	*/
-	$wp_customize->add_setting( 'header_retina_logo', array(
-		'default'           => '',
-		'sanitize_callback' => 'absint',
-	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_retina_logo', array(
-		'label'     => esc_html__( 'Retina Header Logo', 'expire' ),
-		'section'   => 'title_tagline',
-		'mime_type' => 'image',
-		'priority'   => 8,
-	) ) );
-
-	/**
-	------------------------------------------------------------
 	SECTION: Colors
 	------------------------------------------------------------
 	*/
@@ -227,13 +223,28 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 	Main Color
 	*/
 	$wp_customize->add_setting( 'main_color', array(
-		'default'           => '#ff3c1f',
+		'default'           => '#d02c2d',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_color', array(
 		'label'    => esc_html__( 'Main Color', 'expire' ),
 		'settings' => 'main_color',
+		'section'  => 'colors',
+	) ) );
+
+
+	/**
+	Secondary Color
+	*/
+	$wp_customize->add_setting( 'secondary_color', array(
+		'default'           => '#e6e9ed',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_color', array(
+		'label'    => esc_html__( 'Secondary Color', 'expire' ),
+		'settings' => 'secondary_color',
 		'section'  => 'colors',
 	) ) );
 
@@ -252,18 +263,31 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 	) ));
 
 	/**
-	Secondary Color
+	Header Background Color
 	*/
-	$wp_customize->add_setting( 'secondary_color', array(
-		'default'           => '#e6e9ed',
+	$wp_customize->add_setting( 'header_background_color', array(
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_color', array(
-		'label'    => esc_html__( 'Secondary Color', 'expire' ),
-		'settings' => 'secondary_color',
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_background_color', array(
+		'label'    => esc_html__( 'Header Background Color', 'expire' ),
+		'settings' => 'header_background_color',
 		'section'  => 'colors',
-	) ) );
+	) ));
+
+	/**
+	Menu Text Color
+	*/
+	$wp_customize->add_setting( 'menu_text_color', array(
+		'default'           => '#ffffff',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_text_color', array(
+		'label'    => esc_html__( 'Menu Text Color', 'expire' ),
+		'settings' => 'menu_text_color',
+		'section'  => 'colors',
+	) ));
 
 	/**
 	Links Hover
@@ -412,19 +436,6 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 		'mime_type' => 'image',
 	) ) );
 
-	/**
-	Retina Footer Logo
-	*/
-	$wp_customize->add_setting( 'footer_retina_logo', array(
-		'default'           => '',
-		'sanitize_callback' => 'absint',
-	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'footer_retina_logo', array(
-		'label'     => esc_html__( 'Retina Footer Logo', 'expire' ),
-		'section'   => 'footer',
-		'mime_type' => 'image',
-	) ) );
-
 	expire_customizer_separator_control( $wp_customize, 'footer' );
 
 	/**
@@ -451,7 +462,7 @@ add_action( 'customize_preview_init', 'expire_customizer_live_preview' );
  * @since 1.0.0
  */
 function expire_customizer_live_preview() {
-	wp_enqueue_script( 'expire-themecustomizer', EXPIRE_TEMPPATH . '/inc/customizer/js/customizer.js', array( 'jquery', 'customize-preview' ), false );
+	wp_enqueue_script( 'expire-themecustomizer', EXPIRE_TEMPPATH . '/inc/customizer/js/customizer.js', array( 'jquery', 'customize-preview' ), expire_theme_version() );
 }
 
 /**
@@ -460,7 +471,7 @@ function expire_customizer_live_preview() {
  * @since 1.0.0
  */
 function expire_customizer_control_toggle() {
-	wp_enqueue_script( 'expire-contextual-controls', EXPIRE_TEMPPATH . '/inc/customizer/js/customizer-contextual.js', array( 'customize-controls' ), false );
+	wp_enqueue_script( 'expire-contextual-controls', EXPIRE_TEMPPATH . '/inc/customizer/js/customizer-contextual.js', array( 'customize-controls' ), expire_theme_version() );
 	wp_add_inline_style( 'customize-controls', '.wp-full-overlay-sidebar { background: #fff } .customize-control .attachment-media-view .thumbnail{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);}' );
 }
 
