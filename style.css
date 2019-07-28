@@ -1,6 +1,6 @@
 /*
 Theme Name: Expire
-Version: 1.1.0
+Version: 1.1.1
 Author: Denis Žoljom
 Author URI: https://madebydenis.com
 Description: Expire is a simple WordPress theme that can easily be extended. It is customizable with lots of options using Theme Customizer. Built according to WordPress coding standards.
@@ -104,7 +104,7 @@ select {
 body {
 	color: #3e3d3d;
 	background: #fff;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	line-height: 1.65;
 	font-weight: normal;
@@ -224,7 +224,7 @@ var {
 blockquote {
 	font-size: 18px;
 	line-height: 28px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	color: #4e5860;
 	font-style: italic;
@@ -1155,7 +1155,7 @@ nav > ul ul ul:before {
 }
 
 .search_result_number {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 21px;
 	font-weight: 400;
 	position: absolute;
@@ -1315,7 +1315,7 @@ nav > ul ul ul:before {
 
 .blog .post_content_inner_wrapper .post_meta {
 	color: #3e3d3d;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	margin-bottom: 25px;
 }
@@ -1440,7 +1440,7 @@ section.pagination_simple {
 
 .single_post_content .post_meta {
 	color: #3e3d3d;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	margin-bottom: 25px;
 }
@@ -1731,7 +1731,7 @@ section.pagination_simple {
 
 #respond .comment-reply-title {
 	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
 	font-size: 18px;
 	color: #3b4550;
