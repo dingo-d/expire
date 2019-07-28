@@ -2043,12 +2043,29 @@ aside .sidebar-widget-heading a {
 	.boxed_body_wrapper .container {
 		width: 1070px!important;
 	}
+
+
+	.wp-block-cover,
+	.wp-block-image.alignfull,
+	.alignfull {
+		width: 100vw;
+		margin-left: calc( ( 100vw - 1070px ) / -2 )!important;
+		max-width: none;
+	}
 }
 
 @media only screen and (min-width: 1080px) and (max-width: 1239px) {
 	.container,
 	.boxed_body_wrapper {
 		width: 1040px!important;
+	}
+
+	.wp-block-cover,
+	.wp-block-image.alignfull,
+	.alignfull {
+		width: 100vw;
+		margin-left: calc( ( 100vw - 1040px ) / -2 )!important;
+		max-width: none;
 	}
 
 	.comment {
@@ -2066,6 +2083,14 @@ aside .sidebar-widget-heading a {
 		width: 960px!important;
 	}
 
+	.wp-block-cover,
+	.wp-block-image.alignfull,
+	.alignfull {
+		width: 100vw;
+		margin-left: calc( ( 100vw - 960px ) / -2 )!important;
+		max-width: none;
+	}
+
 	.comment {
 		padding-left: 30px;
 	}
@@ -2081,6 +2106,14 @@ aside .sidebar-widget-heading a {
 		width: 748px!important;
 	}
 
+	.wp-block-cover,
+	.wp-block-image.alignfull,
+	.alignfull {
+		width: 100vw;
+		margin-left: calc( ( 100vw - 748px ) / -2 )!important;
+		max-width: none;
+	}
+
 	.comment {
 		padding-left: 30px;
 	}
@@ -2094,6 +2127,14 @@ aside .sidebar-widget-heading a {
 	.container,
 	.boxed_body_wrapper {
 		width: 95%!important;
+	}
+
+	.wp-block-cover,
+	.wp-block-image.alignfull,
+	.alignfull {
+		width: 100vw;
+		margin-left: calc( ( 100vw - 100% ) / -2 )!important;
+		max-width: none;
 	}
 
 	.row > [class*="span"] {
@@ -2220,17 +2261,16 @@ aside .sidebar-widget-heading a {
 	.comment .comment-text {
 		margin-left: 70px;
 	}
+
+	.wp-block-cover__inner-container {
+		margin-top: 100px;
+	}
 }
 
 /*************** 13. Gutenberg blocks ***************/
 
 .wp-block-cover,
-.wp-block-image.alignfull {
-	width: 100vw;
-	margin-left: calc( ( 100vw - 1170px ) / -2 );
-	max-width: none;
-}
-
+.wp-block-image.alignfull,
 .alignfull {
 	width: 100vw;
 	margin-left: calc( ( 100vw - 1170px ) / -2 );
