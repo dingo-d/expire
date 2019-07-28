@@ -1,9 +1,9 @@
 = Expire =
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.2.2
-Version: 1.1.0
+Version: 1.1.1
 Requires PHP: 5.6
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Contributors: dingo_d
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -27,6 +27,9 @@ https://github.com/dingo-d/expire
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.1.1 =
+Fixed the body font back to Raleway
 
 = 1.1.0 =
 Update theme and tested with latest WordPress version (5.2.2)
