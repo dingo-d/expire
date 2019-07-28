@@ -7,6 +7,9 @@ Stable tag: 1.1.1
 Contributors: dingo_d
 License: MIT
 License URI: https://opensource.org/licenses/MIT
+Author: dingo_d
+Author URI: https://madebydenis.com
+Theme URI: https://madebydenis.com/expire/
 Tags: one-column, right-sidebar, custom-header, custom-background, custom-colors, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 == Description ==
