@@ -223,7 +223,7 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 	Main Color
 	*/
 	$wp_customize->add_setting( 'main_color', array(
-		'default'           => '#ff3c1f',
+		'default'           => '#d02c2d',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );

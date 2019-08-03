@@ -24,8 +24,13 @@ In order to develop this theme, you'll need to clone this repository into your `
 
 ``` bash
 composer install
-npm start
+npm install
+
+npm run build-css // to bundle styles
+npm run watch-css // to watch styles - for development
 ```
+
+Composer will install the coding standards, while npm is used to run node-sass which will bundle the gutenberg specific scss for the admin.
 
 ## :scroll: License
 

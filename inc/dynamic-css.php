@@ -22,7 +22,7 @@ $grid_width = get_theme_mod( 'grid_width', '1170' );
 if ( isset( $grid_width ) && '' !== $grid_width ) {
 	$custom_css .= '
 	.container{width:' . intval( esc_attr( $grid_width ) ) . 'px;}
-	.wp-block-cover,.wp-block-image.alignfull{margin-left:calc((100vw - ' . intval( esc_attr( $grid_width ) ) . 'px)/-2);}
+	.wp-block-cover,.wp-block-image.alignfull,.alignfull{margin-left:calc((100vw - ' . intval( esc_attr( $grid_width ) ) . 'px)/-2);}
 	';
 }
 
@@ -32,7 +32,7 @@ if ( isset( $grid_width ) && '' !== $grid_width ) {
  * @var string
  */
 if ( has_header_image() ) {
-	$custom_css .= '#expire_title_bar{background:url(' . get_header_image() . '); min-height:' . esc_attr( get_custom_header()->height ) . '; background-size:cover; background-position:center center;}';
+	$custom_css .= '#expire_title_bar{background:url(' . get_header_image() . '); min-height:' . esc_attr( get_custom_header()->height ) . ';background-size:cover;background-position:center center;}';
 }
 
 /**
@@ -50,7 +50,8 @@ $custom_css .= '#expire_title_bar h2{ color: #' . get_header_textcolor() . '}';
 $background_color = get_theme_mod( 'background_color' );
 
 $custom_css .= '.blog .post_content_inner_wrapper .post_info{ background: ' . esc_attr( $background_color ) . '}
-	#expire_breadcrumbs_section{ border-color: #' . esc_attr( $background_color ) . ';} #expire_breadcrumbs_section:before{ background: #' . esc_attr( $background_color ) . ';}
+	#expire_breadcrumbs_section{ border-color: #' . esc_attr( $background_color ) . ';}
+	#expire_breadcrumbs_section:before{ background: #' . esc_attr( $background_color ) . ';}
 	#expire_breadcrumbs_section:after{ border-bottom-color: #' . esc_attr( $background_color ) . ';}';
 
 /**
@@ -69,10 +70,17 @@ $custom_css .= '::selection{ background:' . esc_attr( $main_color ) . ';}
 	#page404 .big_404{ color:' . esc_attr( $main_color ) . ';}
 	.blog .post_content_inner_wrapper .more-link{ color:' . esc_attr( $main_color ) . '; border-color:' . esc_attr( $main_color ) . ';}
 	#expire_single_post_pagination .prev:hover,
-	#expire_single_post_pagination .next:hover{ border-color:' . esc_attr( $main_color ) . ';}
+	#expire_single_post_pagination .prev:focus,
+	#expire_single_post_pagination .next:hover,
+	#expire_single_post_pagination .next:focus{ border-color:' . esc_attr( $main_color ) . ';}
 	nav > ul > li > a:hover:after,
-	nav > ul > li > a:hover:after, nav > ul > li.current_page_item > a:after, nav > ul > li.current_page_parent > a:after{ background:' . esc_attr( $main_color ) . ';}
-	nav > ul ul li:hover > a{ color:' . esc_attr( $main_color ) . ';}';
+	nav > ul > li > a:focus:after,
+	nav > ul > li > a:hover:after,
+	nav > ul > li > a:focus:after,
+	nav > ul > li.current_page_item > a:after,
+	nav > ul > li.current_page_parent > a:after{ background:' . esc_attr( $main_color ) . ';}
+	nav > ul ul li:hover > a,
+	nav > ul ul li:focus > a{ color:' . esc_attr( $main_color ) . ';}';
 
 /**
  * Secondary color customizer setting
@@ -112,7 +120,7 @@ if ( '' !== $body_text_color ) {
 	h1, h2, h3, h4, h5, h6{color:' . esc_attr( $body_text_color ) . ';}
 	.post_date{color:' . esc_attr( $body_text_color ) . ';}
 	.post_meta i,
-	.post_tags i{ color:' . esc_attr( $body_text_color ) . ';}
+	.post_tags <i></i>{ color:' . esc_attr( $body_text_color ) . ';}
 	.single_post_content .post_meta i{ color:' . esc_attr( $main_color ) . ';}';
 }
 
@@ -133,7 +141,13 @@ if ( '' !== $header_background_color ) {
  */
 $menu_text_color = get_theme_mod( 'menu_text_color' );
 if ( '' !== $menu_text_color ) {
-	$custom_css .= '.has_header_image nav > ul > li > a{color:' . esc_attr( $menu_text_color ) . ';}';
+	$custom_css .= '.has_header_image nav > ul > li > a{color:' . esc_attr( $menu_text_color ) . ';}
+	nav > ul ul li a:hover,
+	.has_header_image nav > ul ul li a:hover,
+	nav > ul ul li a:focus,
+	.has_header_image nav > ul ul li a:focus{ color:' . esc_attr( $main_color ) . ';} }
+	@media only screen and (max-width: 768px) {.has_header_image nav a:hover,
+		.has_header_image nav a:focus{color:' . esc_attr( $main_color ) . ';}}';
 }
 
 /**
@@ -145,26 +159,48 @@ $links_hover = get_theme_mod( 'links_hover' );
 
 if ( '' !== $links_hover ) {
 	$custom_css .= 'a:not(.has_header_image nav > ul > li > a):hover,
+		a:not(.has_header_image nav > ul > li > a):focus,
 		input[type="submit"]:hover,
+		input[type="submit"]:focus,
 		.search .submit:hover i,
+		.search .submit:focus i,
 		nav > ul > li a:hover,
+		nav > ul > li a:focus,
 		nav > ul > li > a:hover:after,
+		nav > ul > li > a:focus:after,
 		nav > ul li:hover > ul,
+		nav > ul li:focus > ul,
 		nav > ul ul li a:hover,
+		nav > ul ul li a:focus,
 		.blog .post_wrapper .post_content h3 a:hover,
+		.blog .post_wrapper .post_content h3 a:focus,
 		.blog .post_content_inner_wrapper .post_meta a:hover,
-		.blog .post_content_inner_wrapper .more-link:hover,
+		.blog .post_content_inner_wrapper .post_meta a:focus,
 		.pagination_simple .page-numbers:hover:not(.current),
+		.pagination_simple .page-numbers:focus:not(.current),
 		.single_post_content .post_meta a:hover,
+		.single_post_content .post_meta a:focus,
 		.post_tags a:hover,
+		.post_tags a:focus,
 		#inner_post_pagination a:hover,
+		#inner_post_pagination a:focus,
 		#expire_single_post_pagination .prev:hover,
+		#expire_single_post_pagination .prev:focus,
 		#expire_single_post_pagination .next:hover,
+		#expire_single_post_pagination .next:focus,
 		#expire_single_post_pagination .prev:hover a,
+		#expire_single_post_pagination .prev:focus a,
 		#expire_single_post_pagination .next:hover a,
+		#expire_single_post_pagination .next:focus a,
 		.comment .reply a:hover,
+		.comment .reply a:focus,
 		.comment .edit-link a:hover,
+		.comment .edit-link a:focus,
 		.widget_calendar tbody a:hover,
-		footer a:hover i{color:' . esc_attr( $links_hover ) . ';}
-    	.blog .post_content_inner_wrapper .more-link:hover{border-color:' . esc_attr( $links_hover ) . ';}';
+		.widget_calendar tbody a:focus,
+		footer a:hover i,
+		footer a:focus i{color:' . esc_attr( $links_hover ) . ';}
+    	.blog .post_content_inner_wrapper .more-link:hover,
+    	.blog .post_content_inner_wrapper .more-link:focus{border-color:' . esc_attr( $links_hover ) . '}
+    	.wp-block-button__link:hover, .wp-block-button__link:focus {box-shadow: 1px 0 10px ' . esc_attr( $links_hover ) . ';}';
 }

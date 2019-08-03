@@ -79,7 +79,7 @@ $author_icon= ( isset( $expire_settings['settings']['author_icon'] )
 						<i class="ti-user"></i><?php esc_html_e( 'By ', 'expire' ); ?><span><?php the_author_posts_link(); ?></span>
 						<?php if ( ! get_theme_mod( 'hide_comments', false ) ) : ?>
 						<i class="ti-comment"></i>
-						<a href="<?php comments_link(); ?>" class="scroll comments_link">
+						<a href="<?php comments_link(); ?>" class="scroll comments_link" tabindex="1">
 							<?php $comment_number = get_comments_number();
 							printf(
 								esc_attr(

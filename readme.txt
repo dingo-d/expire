@@ -1,12 +1,15 @@
 = Expire =
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.2.2
-Version: 1.1.0
+Version: 1.1.2
 Requires PHP: 5.6
-Stable tag: 1.1.0
+Stable tag: 1.1.2
 Contributors: dingo_d
 License: MIT
 License URI: https://opensource.org/licenses/MIT
+Author: dingo_d
+Author URI: https://madebydenis.com
+Theme URI: https://madebydenis.com/expire/
 Tags: one-column, right-sidebar, custom-header, custom-background, custom-colors, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 == Description ==
@@ -28,10 +31,20 @@ https://github.com/dingo-d/expire
 
 == Changelog ==
 
+= 1.1.2 =
+Fixed issues from the review
+Fixed missing logo issue in the customizer
+Added template parts for the content in the index.php
+Minor fixes and improvements in the styles
+Changed main color
+
+= 1.1.1 =
+Fixed the body font back to Raleway
+
 = 1.1.0 =
 Update theme and tested with latest WordPress version (5.2.2)
 Add styles for all Gutenberg blocks
-Updated the theme to meet the current Theme Review standards
+Updated the theme to meet the current Theme Review standards (skip links and some keyboard navigation)
 Changed bundled images to be GPL compatible
 Change License to MIT
 
@@ -86,7 +99,7 @@ Initial release
 Bundled image for default header image: http://mystock.themeisle.com/photo/sea-breeze/
 Licensed under Creative Commons Zero (CC0)
 
-https://www.pexels.com/photo/beach-foam-landscape-nature-533923/ Licensed under Creative Commons Zero (CC0)
+Screenshot image contains:
 
-Screenshot image contains image from the unit data test (Sydney Harbor Bridge) which has the following description:
-Public domain via http://www.burningwell.org/gallery2/v/Objects/dsc09114.jpg.html
+https://www.pexels.com/photo/beach-foam-landscape-nature-533923/
+Licensed under Creative Commons Zero (CC0)

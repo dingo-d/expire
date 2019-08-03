@@ -31,6 +31,8 @@ wp_head();
 echo ( get_theme_mod( 'boxed_body', false ) ) ? '<div class="boxed_body_wrapper">' : '';
 $name = get_bloginfo( 'name' );
 
+$header_class = has_header_image() ? 'class="expire_main_header has_header_image"' : 'class="expire_main_header"';
+
 if ( is_page() ) {
 	// Doesn't work when blog page is set in the reading options for some odd reason.
 	$hide_toolbar = get_post_meta( get_the_ID(), 'expire_toggle_titlebar', true );
@@ -38,8 +40,6 @@ if ( is_page() ) {
 	if ( $hide_toolbar === '1' ) {
 		$header_class = 'class="expire_main_header"';
 	}
-} else {
-	$header_class = has_header_image() ? 'class="expire_main_header has_header_image"' : 'class="expire_main_header"';
 }
 
 $custom_logo_id = get_theme_mod( 'custom_logo' );
