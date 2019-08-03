@@ -1,11 +1,11 @@
 <?php
 /**
- * Support file
+ * Theme support file
  *
  * Contains all the add them support functionality
  *
  * @package Expire
- * @version 1.1.0
+ * @version 1.1.2
  * @author Denis Žoljom <denis.zoljom@gmail.com>
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
@@ -45,8 +45,8 @@ if ( ! function_exists( 'expire_theme_setup' ) ) {
 
     register_default_headers( array(
       'coffee' => array(
-        'url'           => get_template_directory_uri() . '/assets/images/default-header-image.jpg',
-        'thumbnail_url' => get_template_directory_uri() . '/assets/images/default-header-image.jpg',
+        'url'           => get_theme_file_uri() . '/assets/images/default-header-image.jpg',
+        'thumbnail_url' => get_theme_file_uri() . '/assets/images/default-header-image.jpg',
         'description'   => esc_html__( 'Coffee', 'expire' ),
       ),
     ) );
@@ -55,7 +55,7 @@ if ( ! function_exists( 'expire_theme_setup' ) ) {
       'flex-width'    => true,
       'flex-height'   => true,
       'default-text-color' => '#ffffff',
-      'default-image' => get_template_directory_uri() . '/assets/images/default-header-image.jpg',
+      'default-image' => get_theme_file_uri() . '/assets/images/default-header-image.jpg',
     );
     add_theme_support( 'custom-header', $custom_header_args );
     add_post_type_support( 'page', 'excerpt' );

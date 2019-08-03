@@ -3,7 +3,7 @@
  * Dynamic css based on options in the Theme Customize API and Theme Options
  *
  * @package Expire
- * @version 1.1.0
+ * @version 1.1.2
  * @author Denis Žoljom <https://madebydenis.com/expire>
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire

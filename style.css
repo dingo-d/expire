@@ -3,6 +3,7 @@ Theme Name: Expire
 Version: 1.1.1
 Author: Denis Žoljom
 Author URI: https://madebydenis.com
+Theme URI: https://madebydenis.com/expire/
 Description: Expire is a simple WordPress theme that can easily be extended. It is customizable with lots of options using Theme Customizer. Built according to WordPress coding standards.
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -1206,6 +1207,7 @@ nav > ul ul ul:before {
 	padding-bottom: 15px;
 	margin-bottom: 10px;
 	color: #3e3d3d;
+	word-break: break-all;
 }
 
 .blog .post_wrapper .post_content h3 a:hover,
@@ -1525,7 +1527,8 @@ section.pagination_simple {
 	text-decoration: underline;
 }
 
-.post_content .wp-block-image.alignfull {
+.post_content .wp-block-image.alignfull,
+.post_content .alignfull {
 	width: 100%;
 	margin: 0;
 }

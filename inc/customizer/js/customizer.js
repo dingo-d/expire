@@ -2,7 +2,7 @@
  * Customizer preview JavaScript file
  *
  * @package Expire
- * @version 1.0.1
+ * @version 1.1.2
  * @author Denis Žoljom <denis.zoljom@gmail.com>
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire

@@ -3,7 +3,7 @@
  * 404 page
  *
  * @package Expire
- * @version 1.1.0
+ * @version 1.1.2
  * @author Denis Žoljom <denis.zoljom@gmail.com>
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://github.com/infinum/wp-boilerplate

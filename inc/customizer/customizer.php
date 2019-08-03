@@ -3,7 +3,7 @@
  * Customizer
  *
  * @package Expire
- * @version 1.1.0
+ * @version 1.1.2
  * @author Denis Žoljom <denis.zoljom@gmail.com>
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
@@ -428,7 +428,7 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 	*/
 	$wp_customize->add_setting( 'footer_logo', array(
 		'default'           => '',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'esc_url_raw',
 	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'footer_logo', array(
 		'label'     => esc_html__( 'Footer Logo', 'expire' ),
