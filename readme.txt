@@ -6,7 +6,7 @@ Requires PHP: 5.6
 Stable tag: 1.1.0
 Contributors: dingo_d
 License: MIT
-License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+License URI: https://opensource.org/licenses/MIT
 Tags: one-column, right-sidebar, custom-header, custom-background, custom-colors, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 == Description ==

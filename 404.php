@@ -3,7 +3,7 @@
  * 404 page
  *
  * @package Expire
- * @version 1.1.0
+ * @version 1.1.2
  * @author Denis Žoljom <denis.zoljom@gmail.com>
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://github.com/infinum/wp-boilerplate
@@ -17,6 +17,7 @@ Template Name: 404 page
 */
 
 $alternative_404_page = get_theme_mod( 'alternative_404_page', false );
+
 if ( $alternative_404_page && is_404() ) {
 	wp_safe_redirect( get_permalink( $alternative_404_page ) );
 	exit;

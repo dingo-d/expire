@@ -3,7 +3,7 @@
  * Footer
  *
  * @package Expire
- * @version 1.1.0
+ * @version 1.1.2
  * @author Denis Žoljom <denis.zoljom@gmail.com>
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
@@ -25,6 +25,9 @@ $footer_copyright   = get_theme_mod( 'footer_copyright', '' );
 $span1 = '';
 $span2 = '';
 $span3 = '';
+
+$name        = get_bloginfo( 'name' );
+$description = get_bloginfo( 'description' );
 
 if ( $show_social ) {
 	if ( ! empty( $footer_logo ) && ! empty( $footer_copyright ) ) {
@@ -92,7 +95,7 @@ if ( $show_social ) {
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<?php
 					if ( '' !== $footer_logo ) : ?>
-						<img id="footer_main_logo" src="<?php echo esc_url( wp_get_attachment_url( $footer_logo ) ); ?>" alt="<?php echo esc_attr( $name ); ?>">
+						<img id="footer_main_logo" src="<?php echo esc_url( $footer_logo ); ?>" alt="<?php echo esc_attr( $name ); ?>">
 					<?php
 					else : ?>
 						<h1 id="footer_logo_textual"><?php echo esc_html( $name ); ?></h1>

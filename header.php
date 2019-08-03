@@ -3,7 +3,7 @@
  * Header
  *
  * @package Expire
- * @version 1.1.0
+ * @version 1.1.2
  * @author Denis Žoljom <denis.zoljom@gmail.com>
  * @license https://opensource.org/licenses/MIT MIT
  * @link https://madebydenis.com/expire
@@ -29,7 +29,7 @@ wp_head();
 <?php wp_body_open();
 
 echo ( get_theme_mod( 'boxed_body', false ) ) ? '<div class="boxed_body_wrapper">' : '';
-$name           = get_bloginfo( 'name' );
+$name = get_bloginfo( 'name' );
 
 if ( is_page() ) {
 	// Doesn't work when blog page is set in the reading options for some odd reason.
