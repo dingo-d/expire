@@ -11,8 +11,10 @@
  * @since  1.1.0
  */
 
-if ( ! get_theme_mod( 'show_title_bar', true ) ) {
-	return;
+$hide_class = '';
+
+if ( get_theme_mod( 'hide_title_bar', true ) ) {
+	$hide_class = ' hide';
 }
 
 if ( is_page() ) {
@@ -27,10 +29,10 @@ if ( is_page() ) {
 $description = get_bloginfo( 'description' );
 ?>
 
-<section id="expire_title_bar">
+<section id="expire_title_bar" class="title-bar-wrapper js-customize-toggle-title-bar-wapper<?php echo esc_attr( $hide_class ); ?>" >
 	<div class="container">
 		<div class="row">
-			<div class="span12 left_aligned">
+			<div class="span12 left_aligned title-bar js-customize-toggle-tagline">
 				<?php if ( is_404() ) : ?>
 					<h2><?php esc_html_e( 'Page not found', 'expire' ); ?></h2>
 				<?php elseif ( is_singular() ) : ?>

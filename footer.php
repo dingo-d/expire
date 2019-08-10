@@ -114,6 +114,7 @@ if ( $show_social ) {
 		</div>
 	</div>
 </footer>
+<a href="#" class="expire_back_to_top js-scroll-up hide" aria-label="<?php esc_html_e( 'Back to top button', 'expire' ); ?>"></a>
 <?php
 echo ( get_theme_mod( 'boxed_body', false ) ) ? '</div>' : '' ;
 wp_footer(); ?>

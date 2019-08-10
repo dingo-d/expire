@@ -19,20 +19,27 @@ jQuery( document ).ready(function( $) {
 	/**
 	 * Variables
 	 */
-
-	var $main_header 	 = $( '#expire_main_header' ),
-		$menu_responsive = $( '#expire_main_header nav' ),
+	var $menu_responsive = $( '#expire_main_header nav' ),
 		offset;
 
 	/**
-	 * Functions and callbacks
+	 * Helper debounce function
 	 */
-	expire_scroll_to_section_on_another_page();
-
-	$( document ).on( 'click', '#expire_back_to_top', expire_back_to_top )
-				 .on( 'click', '.scroll', expire_scroll_to_section )
-				 .on( 'click', '#expire_menu_toggle', expire_menu_responsive )
-				 .on( 'click', '.submit', expire_submit_form );
+	function expire_debounce( func, wait, immediate ) {
+		var timeout;
+		return function() {
+			var context = this,
+			args = arguments;
+			var later = function() {
+				timeout = null;
+				if ( !immediate ) func.apply( context, args );
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout( timeout );
+			timeout = setTimeout( later, wait );
+			if ( callNow ) func.apply( context, args );
+		};
+	};
 
 	function expire_get_scroll_bar_width() {
 		var $outer = $( '<div>' ).css( {visibility: 'hidden', width: 100, overflow: 'scroll'} ).appendTo( 'body' ),
@@ -41,17 +48,53 @@ jQuery( document ).ready(function( $) {
 		return 100 - widthWithScroll;
 	}
 
-	$( window ).on( 'resize', function() {
+	/**
+	 * Functions and callbacks
+	 */
+	expire_scroll_to_section_on_another_page();
+
+	$( document ).on( 'click', '.js-scroll-up', expire_back_to_top )
+				 .on( 'click', '.js-menu-toggle', expire_menu_responsive )
+				 .on( 'click', '.js-scroll', expire_scroll_to_section );
+
+	var expire_toggle_mobile_menu_on_resize = expire_debounce( function() {
 		if ( $( this ).width() > ( 768 - expire_get_scroll_bar_width() ) && $menu_responsive.css( 'display', 'none' ) ) {
 			$menu_responsive[0].removeAttribute( 'style' );
-			$( '.expire_hamburger_menu' ).removeClass( 'active' );
+			$( '.js-menu-toggle' ).removeClass( 'active' );
 		}
-	});
+	}, 250 );
+
+	var expire_toggle_scroll_to_top = expire_debounce(function() {
+		var distance = document.documentElement.scrollTop || document.body.scrollTop;
+
+		if ( distance > 200 ) {
+			$('.js-scroll-up').removeClass('hide');
+		} else {
+			$('.js-scroll-up').addClass('hide');
+		}
+	}, 250);
+
+	expire_toggle_scroll_to_top();
+
+	$( window ).on( 'resize', expire_toggle_mobile_menu_on_resize )
+			   .on( 'scroll', expire_toggle_scroll_to_top );
 
 	function expire_back_to_top(e) {
 		e.preventDefault();
-		$( 'html, body' ).animate( {scrollTop: 0}, 500 );
+		$( 'html, body' ).animate( { scrollTop: 0 }, 500 );
 		return false;
+	}
+
+	function expire_menu_responsive() {
+		$menu_responsive.animate( {
+			width:'toggle'
+		}, 350 );
+
+		$( this ).toggleClass( 'active' );
+		var expanded = $( this ).attr( 'aria-expanded') === 'true' || false;
+		$( this ).attr( 'aria-expanded', !expanded );
+
+		$( '.js-menu' ).toggleClass( 'active' );
 	}
 
 	function expire_scroll_to_section(e) {
@@ -85,15 +128,6 @@ jQuery( document ).ready(function( $) {
 				}, 1000);
 			}
 		}
-	}
-
-	function expire_menu_responsive() {
-		$menu_responsive.animate( {width:'toggle'}, 350 );
-		$( this ).find( '.expire_hamburger_menu' ).toggleClass( 'active' );
-	}
-
-	function expire_submit_form() {
-		$( this ).closest( 'form' ).submit();
 	}
 
 });

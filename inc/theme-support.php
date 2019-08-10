@@ -54,11 +54,14 @@ if ( ! function_exists( 'expire_theme_setup' ) ) {
     $custom_header_args = array(
       'flex-width'    => true,
       'flex-height'   => true,
-      'default-text-color' => '#ffffff',
+      'header-text'   => true,
       'default-image' => get_theme_file_uri() . '/assets/images/default-header-image.jpg',
     );
+
     add_theme_support( 'custom-header', $custom_header_args );
+
     add_post_type_support( 'page', 'excerpt' );
+
     add_filter( 'the_content_more_link', 'expire_remove_more_link_scroll_wrap' );
 
     /**

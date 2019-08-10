@@ -16,17 +16,6 @@ jQuery( document ).ready(function( $) {
 
 	$( document ).on( 'change keyup', '.slider_input', expire_slider_input_change );
 
-	expire_control_description();
-
-	function expire_control_description() {
-		$( 'li.customize-control' ).each(function() {
-			var $this = $( this );
-			if ( $this.find( 'p' ).html() !== '' ) {
-				$this.find( 'p' ).replaceWith( '<span class="description customize-control-description">' + $this.find( 'p' ).text() + '</span>' );
-			}
-		});
-	}
-
 	/********* Slider Custom control ***********/
 
 	$( '.slider-range' ).each(function(){
