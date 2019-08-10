@@ -126,13 +126,14 @@ function expire_customize_register( WP_Customize_Manager $wp_customize ) {
 	/**
 	Show title bar
 	*/
-	$wp_customize->add_setting( 'show_title_bar', array(
-		'default'           => false,
+	$wp_customize->add_setting( 'hide_title_bar', array(
+		'default'           => true,
+		'transport'	        => 'postMessage',
 		'sanitize_callback' => 'expire_checkbox_sanitization',
 	) );
-	$wp_customize->add_control( new Expire_Toggle_Checkbox_Custom_Control( $wp_customize, 'show_title_bar', array(
-		'label'    	  => esc_html__( 'Show Title Bar', 'expire' ),
-		'description' => esc_html__( 'Check this to hide the title bar on all pages', 'expire' ),
+	$wp_customize->add_control( new Expire_Toggle_Checkbox_Custom_Control( $wp_customize, 'hide_title_bar', array(
+		'label'    	  => esc_html__( 'Hide Title Bar', 'expire' ),
+		'description' => esc_html__( 'Check this to hide or show the title bar on all pages', 'expire' ),
 		'type'     	  => 'checkbox',
 		'section'  	  => 'section_general',
 	) ) );
@@ -472,6 +473,5 @@ function expire_customizer_live_preview() {
  */
 function expire_customizer_control_toggle() {
 	wp_enqueue_script( 'expire-contextual-controls', EXPIRE_TEMPPATH . '/inc/customizer/js/customizer-contextual.js', array( 'customize-controls' ), expire_theme_version() );
-	wp_add_inline_style( 'customize-controls', '.wp-full-overlay-sidebar { background: #fff } .customize-control .attachment-media-view .thumbnail{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);}' );
 }
 

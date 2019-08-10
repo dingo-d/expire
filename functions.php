@@ -27,6 +27,19 @@ require EXPIRE_TEMPDIR . '/inc/metabox-page.php';
 
 require EXPIRE_TEMPDIR . '/inc/sanitization.php';
 
+if ( ! function_exists( 'expire_theme_version' ) ) {
+	/**
+	 * Cache busting for development purposes
+	 *
+	 * @since 1.1.0
+	 *
+	 * @return string
+	 */
+	function expire_theme_version() {
+		return ( defined( 'DEV' ) && DEV ) ? filemtime( get_stylesheet_directory() ) : EXPIRE_THEME_VERSION;
+	}
+}
+
 /**
  * Theme Customizer
  */
@@ -47,18 +60,6 @@ if ( ! function_exists( 'expire_register_my_menus' ) ) {
 	}
 }
 
-if ( ! function_exists( 'expire_theme_version' ) ) {
-	/**
-	 * Cache busting for development purposes
-	 *
-	 * @since 1.1.0
-	 *
-	 * @return string
-	 */
-	function expire_theme_version() {
-		return ( defined( 'DEV' ) && DEV ) ? filemtime( get_stylesheet_directory() ) : EXPIRE_THEME_VERSION;
-	}
-}
 
 if ( ! function_exists( 'expire_fonts_dependency' ) ) {
 	/**

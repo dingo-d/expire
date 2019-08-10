@@ -154,6 +154,26 @@
 		});
 	});
 
+	api('hide_title_bar', function(value){
+		value.bind(function(newval){
+			if ( newval ) {
+				$( '.js-customize-toggle-title-bar-wapper' ).addClass( 'hide' );
+			} else {
+				$( '.js-customize-toggle-title-bar-wapper' ).removeClass( 'hide' );
+			}
+		});
+	});
+
+	api('header_textcolor', function(value){
+		value.bind(function(newval){
+			if ( newval === 'blank') {
+				$( '.js-customize-toggle-logo, .js-customize-toggle-tagline' ).addClass( 'hide' );
+			} else {
+				$( '.js-customize-toggle-logo, .js-customize-toggle-tagline' ).removeClass( 'hide' );
+			}
+		});
+	});
+
 	api('footer_facebook', function(value){
 		value.bind(function(newval){
 			if ( $( '.footer_facebook' ).length ) {

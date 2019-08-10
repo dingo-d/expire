@@ -46,9 +46,9 @@ $custom_logo_id = get_theme_mod( 'custom_logo' );
 $logo           = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
 	<header id="expire_main_header" <?php echo wp_kses_post( $header_class ); ?>>
-		<a class="skip-link" href="#main-content" tabindex="0"><?php esc_html_e( 'Skip to the main content', 'expire' ); ?></a>
+		<a class="skip-link" href="#main-content" tabindex="2"><?php esc_html_e( 'Skip to the main content', 'expire' ); ?></a>
 		<div class="container">
-			<div id="logo">
+			<div id="logo" class="main-logo js-customize-toggle-logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<?php
 					if ( isset( $custom_logo_id ) && ! empty( $custom_logo_id ) ) : ?>
@@ -61,10 +61,21 @@ $logo           = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 					endif; ?>
 				</a>
 			</div>
-			<nav>
-				<?php wp_nav_menu( array( 'theme_location' => 'header_menu', 'container' => 'ul', 'menu_id' => 'main_menu', 'menu_class' => '' ) ); ?>
+			<?php if ( has_nav_menu( 'header_menu' ) ) { ?>
+			<button id="expire_menu_toggle" class="expire_menu_toggle js-menu-toggle" aria-label="<?php esc_html_e( 'Navigation menu button', 'expire' ); ?>">
+				<div class="expire_hamburger_menu"><span></span></div>
+			</button>
+			<nav role="navigation">
+			<?php wp_nav_menu(
+				array(
+					'theme_location' => 'header_menu',
+					'container'      => 'ul',
+					'menu_id'        => 'main_menu',
+					'menu_class'     => 'main-menu-nav js-menu'
+				)
+			); ?>
 			</nav>
-			<div id="expire_menu_toggle"><div class="expire_hamburger_menu"><span></span></div></div>
+			<?php } ?>
 		</div>
 	</header>
 	<?php get_template_part( 'template-parts/header/title', 'bar' ); ?>
