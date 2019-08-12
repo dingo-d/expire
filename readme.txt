@@ -1,9 +1,9 @@
 = Expire =
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.2.2
-Version: 1.1.3
+Version: 1.1.4
 Requires PHP: 5.6
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 Contributors: dingo_d
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -30,6 +30,9 @@ https://github.com/dingo-d/expire
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.1.4 =
+Fixed minor icon issues for post formats
 
 = 1.1.3 =
 Fixed issues from the review

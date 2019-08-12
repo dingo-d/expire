@@ -17,7 +17,7 @@
  * @since  1.0.0
  */
 
-define( 'EXPIRE_THEME_VERSION', '1.1.2' );
+define( 'EXPIRE_THEME_VERSION', '1.1.4' );
 define( 'EXPIRE_TEMPPATH', get_theme_file_uri() );
 define( 'EXPIRE_TEMPDIR', get_theme_file_path() );
 
