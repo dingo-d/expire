@@ -63,7 +63,7 @@
 .ti-close:before {
   content: "\e939";
 }
-.ti-comment:before {
+.ti-comment-alt:before {
   content: "\e93e";
 }
 .ti-comments:before {
@@ -138,7 +138,7 @@
 .ti-pencil:before {
   content: "\e9f5";
 }
-.ti-quote-right:before {
+.ti-quote:before {
   content: "\ea02";
 }
 .ti-ruler-alt-2:before {
